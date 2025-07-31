@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy1hg1e04pdxu"
-path="res://.godot/imported/tilemapcats.png-56a100b487bca7da37d35d09830c2c3a.ctex"
+uid="uid://dunsyxjwlib7w"
+path="res://.godot/imported/buttonForCat.png-9998c8a19e2599b917a2e55ff84896fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/General/tilemapcats.png"
-dest_files=["res://.godot/imported/tilemapcats.png-56a100b487bca7da37d35d09830c2c3a.ctex"]
+source_file="res://Sprites/buttonForCat.png"
+dest_files=["res://.godot/imported/buttonForCat.png-9998c8a19e2599b917a2e55ff84896fa.ctex"]
 
 [params]
 

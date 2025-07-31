@@ -3,7 +3,6 @@ extends Node2D
 @onready var ground = $Ground
 @onready var preview = $Preview
 @onready var catScene = load("res://Scenes/Entities/Cats/Cat.tscn")
-
 var source_id : int
 var selected_tile : Vector2i
  
@@ -58,16 +57,10 @@ func _input(event):
 			ground.erase_cell(preview_tile)
  
  
- 
-	if event is InputEventKey:
-		if event.keycode == KEY_1 and event.pressed:
-			select_mode = true
-			source_id = 0
-			selected_tile = Vector2i(0,0)
-		if event.keycode == KEY_2 and event.pressed:
-			source_id = 0
-			selected_tile = Vector2i(2,0)
-			select_mode = true
+func on_button_pressed(next_cat_id:Vector2i)->void:
+	select_mode = true
+	selected_tile = next_cat_id
+	pass
  
 func place_tile(tile_pos: Vector2i):
 	var placed_cat = catScene.instantiate()
@@ -81,3 +74,19 @@ func place_tile(tile_pos: Vector2i):
 	preview.erase_cell(tile_pos)
 	BuildingManager.get_tiles(ground, selected_tile, preview_tile)
  
+func get_sprite_from_atlas(source_id: int, atlas_coords: Vector2i) -> Sprite2D:
+	var source = ground.tile_set.get_source(source_id)
+
+	if source is TileSetAtlasSource:
+		var texture = source.get_texture()
+		var region = source.get_tile_texture_region(atlas_coords)
+
+		var sprite := Sprite2D.new()
+		sprite.texture = texture
+		sprite.region_enabled = true
+		sprite.region_rect = region
+
+		return sprite
+	else:
+		printerr("ełłoł -><- coś posrane >.<")
+		return null

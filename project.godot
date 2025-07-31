@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+BuildingScene="*res://Scenes/Building/BuildingScene.tscn"
 BuildingManager="*res://Scripts/General/BuildingManager.gd"
 
 [dotnet]
