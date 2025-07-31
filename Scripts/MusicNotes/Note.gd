@@ -2,6 +2,7 @@ extends Node2D
 class_name Note
 
 @onready var area: Area2D = $Area
+@onready var sprite: Sprite2D = $Sprite
 var element: Elements.Type
 var element_time: float = 3.5
 var target: Dog
@@ -12,6 +13,10 @@ var target: Dog
 var direction
 var death_timer_started := false
 
+func init():
+	area = $Area
+	sprite = $Sprite
+	
 func set_target(_target: Dog) -> void:
 	target = _target
 

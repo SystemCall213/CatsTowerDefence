@@ -2,9 +2,9 @@ extends Node2D
 class_name Cat
 
 @onready var aggression_area: Area2D = $AggressionArea
+@onready var combination: NotesCombination = $Combination
 
 @export var attack_list: Array[PackedScene]
-@export var attack_cooldown: float = 3.0  # Seconds between attacks
 @export var attack_interval: float = 0.2  # Interval between notes in a burst
 
 var current_target: Dog = null

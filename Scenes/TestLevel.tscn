@@ -2,16 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://cpyav4hudgck2" path="res://Scenes/EnemySpawner.tscn" id="1_7bgh8"]
 [ext_resource type="PackedScene" uid="uid://bbjyvpeclx6yg" path="res://Scenes/Environment/road.tscn" id="1_pjeki"]
+[ext_resource type="PackedScene" uid="uid://cxud6tpmocqjr" path="res://Scenes/timeline.tscn" id="1_u8y25"]
 [ext_resource type="PackedScene" uid="uid://bnrerg0mjwy14" path="res://Scenes/gate.tscn" id="2_xilbr"]
 [ext_resource type="PackedScene" uid="uid://cqgodgr6cmq7k" path="res://Scenes/Entities/Dogs/Dog.tscn" id="3_2hpnd"]
 [ext_resource type="PackedScene" uid="uid://bpflis6svffl0" path="res://Scenes/WaypointSystem/waypoint_manager.tscn" id="4_kqchx"]
 [ext_resource type="PackedScene" uid="uid://dp4vbs068eq1c" path="res://Scenes/WaypointSystem/waypoint.tscn" id="5_pv4pb"]
-[ext_resource type="PackedScene" uid="uid://o0uslcni7qaf" path="res://Scenes/Entities/Cats/Cat.tscn" id="7_q3vfd"]
-[ext_resource type="PackedScene" uid="uid://l1aswjsskbt4" path="res://Scenes/Notes/note.tscn" id="8_t1vxu"]
 [ext_resource type="PackedScene" uid="uid://b5agh2k01gjwf" path="res://Scenes/Building/BuildingManager.tscn" id="9_admk3"]
+[ext_resource type="PackedScene" uid="uid://duo3m7vn87lj1" path="res://Scenes/player.tscn" id="10_r77cc"]
 [ext_resource type="TileSet" uid="uid://bewqq0e73mcax" path="res://TileSet/bacground_tileset.tres" id="12_211sv"]
 
 [node name="TestLevel" type="Node2D"]
+
+[node name="Timeline" parent="." instance=ExtResource("1_u8y25")]
 
 [node name="EnemySpawner" parent="." node_paths=PackedStringArray("waypoint_manager") instance=ExtResource("1_7bgh8")]
 position = Vector2(-32, 480)
@@ -72,10 +74,6 @@ position = Vector2(192, -192)
 [node name="Waypoint2" parent="WaypointManager" instance=ExtResource("5_pv4pb")]
 position = Vector2(536, -192)
 
-[node name="Cat" parent="." instance=ExtResource("7_q3vfd")]
-position = Vector2(224, 352)
-attack_list = Array[PackedScene]([ExtResource("8_t1vxu"), ExtResource("8_t1vxu"), ExtResource("8_t1vxu"), ExtResource("8_t1vxu")])
-
 [node name="Node2D" parent="." instance=ExtResource("9_admk3")]
 
 [node name="Background" type="TileMapLayer" parent="."]
@@ -84,3 +82,5 @@ tile_set = ExtResource("12_211sv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="Player" parent="." instance=ExtResource("10_r77cc")]
