@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbfuxwwdi248x"]
+[gd_scene load_steps=3 format=3 uid="uid://b2hx6wmmew2v2"]
 
 [ext_resource type="Texture2D" uid="uid://dunsyxjwlib7w" path="res://Sprites/buttonForCat.png" id="1_7fk6n"]
 [ext_resource type="Script" path="res://Scenes/bottom_panel.gd" id="1_bhkjg"]
@@ -14,10 +14,10 @@ script = ExtResource("1_bhkjg")
 
 [node name="ButtonTexture" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 503.0
-offset_top = 459.0
-offset_right = 583.0
-offset_bottom = 539.0
+offset_left = -63.9999
+offset_top = -55.9999
+offset_right = 16.0001
+offset_bottom = 24.0001
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("1_7fk6n")
 
