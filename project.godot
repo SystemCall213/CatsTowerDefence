@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 CurrentTime="*res://Scripts/General/CurrentTime.gd"
+BuildingManager="*res://Scripts/General/BuildingManager.gd"
 
 [dotnet]
 
