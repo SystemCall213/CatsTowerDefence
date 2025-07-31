@@ -2,7 +2,8 @@ extends Node2D
  
 @onready var ground = $Ground
 @onready var preview = $Preview
- 
+@onready var catScene = load("res://Scenes/Entities/Cats/Cat.tscn")
+
 var source_id : int
 var selected_tile : Vector2i
  
@@ -69,6 +70,13 @@ func _input(event):
 			select_mode = true
  
 func place_tile(tile_pos: Vector2i):
+	var placed_cat = catScene.instantiate()
+	
+	var world_pos = ground.map_to_local(tile_pos)
+	placed_cat.position = world_pos  
+	
+	add_child(placed_cat)
+	
 	ground.set_cell(tile_pos, source_id, selected_tile)
 	preview.erase_cell(tile_pos)
 	BuildingManager.get_tiles(ground, selected_tile, preview_tile)

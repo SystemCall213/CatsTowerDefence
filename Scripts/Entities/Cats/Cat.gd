@@ -74,3 +74,7 @@ func _fire_note(note_scene: PackedScene):
 	note.global_position = global_position
 
 	get_tree().current_scene.add_child(note)
+	
+func _add_example_attack_list()->void:
+	
+	pass
