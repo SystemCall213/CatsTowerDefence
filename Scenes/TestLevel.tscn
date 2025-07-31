@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b17by6d1c5sbd"]
+[gd_scene load_steps=10 format=3 uid="uid://b17by6d1c5sbd"]
 
 [ext_resource type="PackedScene" uid="uid://cpyav4hudgck2" path="res://Scenes/EnemySpawner.tscn" id="1_7bgh8"]
 [ext_resource type="PackedScene" uid="uid://bbjyvpeclx6yg" path="res://Scenes/Environment/road.tscn" id="1_pjeki"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bpflis6svffl0" path="res://Scenes/WaypointSystem/waypoint_manager.tscn" id="4_kqchx"]
 [ext_resource type="PackedScene" uid="uid://dp4vbs068eq1c" path="res://Scenes/WaypointSystem/waypoint.tscn" id="5_pv4pb"]
 [ext_resource type="PackedScene" uid="uid://o0uslcni7qaf" path="res://Scenes/Entities/Cats/Cat.tscn" id="7_q3vfd"]
-[ext_resource type="PackedScene" uid="uid://l1aswjsskbt4" path="res://Scenes/Notes/note.tscn" id="8_t1vxu"]
+[ext_resource type="PackedScene" uid="uid://c0u0us8igl2lp" path="res://Scenes/Notes/water_note.tscn" id="9_8y58c"]
+[ext_resource type="PackedScene" uid="uid://uuululr6h2ww" path="res://Scenes/Notes/cryo_note.tscn" id="9_p3r05"]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -72,4 +73,5 @@ position = Vector2(536, -192)
 
 [node name="Cat" parent="." instance=ExtResource("7_q3vfd")]
 position = Vector2(224, 352)
-attack_list = Array[PackedScene]([ExtResource("8_t1vxu"), ExtResource("8_t1vxu"), ExtResource("8_t1vxu"), ExtResource("8_t1vxu")])
+attack_list = Array[PackedScene]([ExtResource("9_p3r05"), ExtResource("9_8y58c")])
+attack_cooldown = 10.0

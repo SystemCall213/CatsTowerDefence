@@ -4,10 +4,14 @@ class_name Dog
 @export var waypoint_manager: WaypointManager = null
 var waypoints: Array = []
 var current_index: int = 0
+var speed_orig: float = 50.0
 var speed: float = 50.0
 var turn_speed: float = 5.0
 @export var current_hp: int
 @export var max_hp: int = 10
+
+var effects: Array[Effect] = []
+var elements: Array[Element] = []
 
 @onready var hp_bar: HPBar = $ProgressBar
 
