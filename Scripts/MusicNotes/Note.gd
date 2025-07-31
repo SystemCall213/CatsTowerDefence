@@ -9,6 +9,9 @@ var target: Dog
 @export var spin_speed: float = 15.0
 @export var damage: int = 2
 
+var direction
+var death_timer_started := false
+
 func set_target(_target: Dog) -> void:
 	target = _target
 
@@ -16,13 +19,15 @@ func _ready():
 	area.connect("body_entered", _on_area_entered)
 
 func _physics_process(delta):
-	if not is_instance_valid(target):
-		queue_free()
-		return
+	if is_instance_valid(target):
+		direction = (target.global_position - global_position).normalized()
+	else:
+		if not death_timer_started:
+			death_timer_started = true
+			await get_tree().create_timer(1.0).timeout
+			queue_free()
 
-	var direction = (target.global_position - global_position).normalized()
 	position += direction * speed * delta
-
 	rotation += spin_speed * delta
 
 func _on_area_entered(dog: Dog) -> void:

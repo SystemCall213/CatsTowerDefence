@@ -79,3 +79,11 @@ position = Vector2(536, -192)
 [node name="Cat" parent="." instance=ExtResource("7_q3vfd")]
 position = Vector2(224, 352)
 attack_list = Array[PackedScene]([ExtResource("9_p3r05"), ExtResource("9_8y58c")])
+
+[node name="Cat2" parent="." instance=ExtResource("7_q3vfd")]
+position = Vector2(96, 352)
+attack_list = Array[PackedScene]([ExtResource("9_p3r05"), ExtResource("9_8y58c")])
+
+[node name="Cat3" parent="." instance=ExtResource("7_q3vfd")]
+position = Vector2(224, 416)
+attack_list = Array[PackedScene]([ExtResource("9_p3r05"), ExtResource("9_8y58c")])
