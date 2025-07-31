@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbjyvpeclx6yg"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_rpj36"]
+
+[node name="Road" type="Sprite2D"]
+scale = Vector2(8, 8)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(8, 8)
+mesh = SubResource("QuadMesh_rpj36")

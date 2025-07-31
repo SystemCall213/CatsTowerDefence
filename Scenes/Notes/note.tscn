@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://l1aswjsskbt4"]
+
+[ext_resource type="Script" path="res://Scripts/MusicNotes/Note.gd" id="1_ii4ab"]
+[ext_resource type="Texture2D" uid="uid://dtsbtmdejtbc7" path="res://Assets/C_Water.png" id="2_hpnr1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8hcql"]
+
+[sub_resource type="Curve" id="Curve_36th6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.96, 0.417582), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_chm5j"]
+curve = SubResource("Curve_36th6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j6wgt"]
+particle_flag_disable_z = true
+angle_min = -180.0
+angle_max = 180.0
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+angular_velocity_min = 100.0
+angular_velocity_max = 300.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_chm5j")
+
+[node name="Note" type="Node2D"]
+z_index = 2
+script = ExtResource("1_ii4ab")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hpnr1")
+
+[node name="Area" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="Area"]
+shape = SubResource("CircleShape2D_8hcql")
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+z_index = 2
+scale = Vector2(0.5, 0.5)
+emitting = false
+amount = 25
+process_material = SubResource("ParticleProcessMaterial_j6wgt")
+texture = ExtResource("2_hpnr1")
+one_shot = true
+explosiveness = 0.4
+randomness = 1.0

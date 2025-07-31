@@ -1,3 +1,75 @@
-[gd_scene format=3 uid="uid://b17by6d1c5sbd"]
+[gd_scene load_steps=9 format=3 uid="uid://b17by6d1c5sbd"]
+
+[ext_resource type="PackedScene" uid="uid://cpyav4hudgck2" path="res://Scenes/EnemySpawner.tscn" id="1_7bgh8"]
+[ext_resource type="PackedScene" uid="uid://bbjyvpeclx6yg" path="res://Scenes/Environment/road.tscn" id="1_pjeki"]
+[ext_resource type="PackedScene" uid="uid://bnrerg0mjwy14" path="res://Scenes/gate.tscn" id="2_xilbr"]
+[ext_resource type="PackedScene" uid="uid://cqgodgr6cmq7k" path="res://Scenes/Entities/Dogs/Dog.tscn" id="3_2hpnd"]
+[ext_resource type="PackedScene" uid="uid://bpflis6svffl0" path="res://Scenes/WaypointSystem/waypoint_manager.tscn" id="4_kqchx"]
+[ext_resource type="PackedScene" uid="uid://dp4vbs068eq1c" path="res://Scenes/WaypointSystem/waypoint.tscn" id="5_pv4pb"]
+[ext_resource type="PackedScene" uid="uid://o0uslcni7qaf" path="res://Scenes/Entities/Cats/Cat.tscn" id="7_q3vfd"]
+[ext_resource type="PackedScene" uid="uid://l1aswjsskbt4" path="res://Scenes/Notes/note.tscn" id="8_t1vxu"]
 
 [node name="TestLevel" type="Node2D"]
+
+[node name="EnemySpawner" parent="." node_paths=PackedStringArray("waypoint_manager") instance=ExtResource("1_7bgh8")]
+position = Vector2(-32, 480)
+waypoint_manager = NodePath("../WaypointManager")
+enemies_to_spawn = {
+ExtResource("3_2hpnd"): 5
+}
+
+[node name="Roads" type="Node2D" parent="."]
+
+[node name="Road" parent="Roads" instance=ExtResource("1_pjeki")]
+position = Vector2(32, 480)
+
+[node name="Road2" parent="Roads" instance=ExtResource("1_pjeki")]
+position = Vector2(224, 288)
+
+[node name="Road3" parent="Roads" instance=ExtResource("1_pjeki")]
+position = Vector2(160, 288)
+
+[node name="Road4" parent="Roads" instance=ExtResource("1_pjeki")]
+position = Vector2(160, 352)
+
+[node name="Road5" parent="Roads" instance=ExtResource("1_pjeki")]
+position = Vector2(160, 416)
+
+[node name="Road6" parent="Roads" instance=ExtResource("1_pjeki")]
+position = Vector2(160, 480)
+
+[node name="Road7" parent="Roads" instance=ExtResource("1_pjeki")]
+position = Vector2(96, 480)
+
+[node name="Road8" parent="Roads" instance=ExtResource("1_pjeki")]
+position = Vector2(32, 480)
+
+[node name="Road9" parent="Roads" instance=ExtResource("1_pjeki")]
+position = Vector2(416, 288)
+
+[node name="Road10" parent="Roads" instance=ExtResource("1_pjeki")]
+position = Vector2(352, 288)
+
+[node name="Road11" parent="Roads" instance=ExtResource("1_pjeki")]
+position = Vector2(288, 288)
+
+[node name="Gate" parent="." instance=ExtResource("2_xilbr")]
+position = Vector2(456, 288)
+rotation = 1.5708
+
+[node name="WaypointManager" parent="." instance=ExtResource("4_kqchx")]
+position = Vector2(-32, 480)
+waypoints = Array[NodePath]([NodePath("Waypoint"), NodePath("Waypoint3"), NodePath("Waypoint2")])
+
+[node name="Waypoint" parent="WaypointManager" instance=ExtResource("5_pv4pb")]
+position = Vector2(192, 0)
+
+[node name="Waypoint3" parent="WaypointManager" instance=ExtResource("5_pv4pb")]
+position = Vector2(192, -192)
+
+[node name="Waypoint2" parent="WaypointManager" instance=ExtResource("5_pv4pb")]
+position = Vector2(536, -192)
+
+[node name="Cat" parent="." instance=ExtResource("7_q3vfd")]
+position = Vector2(224, 352)
+attack_list = Array[PackedScene]([ExtResource("8_t1vxu"), ExtResource("8_t1vxu"), ExtResource("8_t1vxu"), ExtResource("8_t1vxu")])

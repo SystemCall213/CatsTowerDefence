@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnrerg0mjwy14"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_o0qru"]
+
+[node name="Gate" type="Sprite2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(96, 16)
+mesh = SubResource("QuadMesh_o0qru")
