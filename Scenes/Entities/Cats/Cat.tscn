@@ -1,19 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://o0uslcni7qaf"]
+[gd_scene load_steps=3 format=3 uid="uid://o0uslcni7qaf"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Cats/Cat.gd" id="1_lnaah"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_ykqyk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bwgay"]
 
 [node name="Cat" type="Node2D"]
 script = ExtResource("1_lnaah")
-
-[node name="Sprite" type="Sprite2D" parent="."]
-
-[node name="Mesh" type="MeshInstance2D" parent="."]
-scale = Vector2(50, 50)
-mesh = SubResource("QuadMesh_ykqyk")
 
 [node name="AggressionArea" type="Area2D" parent="."]
 collision_mask = 2
