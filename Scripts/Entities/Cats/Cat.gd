@@ -14,9 +14,13 @@ var can_attack := true
 func _ready():
 	aggression_area.connect("body_entered", _on_body_entered)
 	aggression_area.connect("body_exited", _on_body_exited)
+	CurrentTime.connect("looped", Callable(self, "_on_looped"))
 
 func _process(_delta):
 	_update_target()
+
+func _on_looped():
+	can_attack = true
 
 func _update_target():
 	if detected_dogs.is_empty():
@@ -36,10 +40,6 @@ func _update_target():
 
 	current_target = closest
 
-	# Start attacking if we have a target
-	if can_attack and is_instance_valid(current_target):
-		_start_attack()
-
 func _on_body_entered(body: Node):
 	if body is Dog and body not in detected_dogs:
 		detected_dogs.append(body)
@@ -50,11 +50,13 @@ func _on_body_exited(body: Node):
 		if current_target == body:
 			current_target = null
 
+func attack():
+	if can_attack and is_instance_valid(current_target):
+		_start_attack()
+
 func _start_attack():
 	can_attack = false
 	_fire_burst()
-	await get_tree().create_timer(attack_cooldown).timeout
-	can_attack = true
 
 func _fire_burst():
 	# Fire all Notes in attack_list with small delay

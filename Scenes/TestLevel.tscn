@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://b17by6d1c5sbd"]
+[gd_scene load_steps=11 format=3 uid="uid://b17by6d1c5sbd"]
 
 [ext_resource type="PackedScene" uid="uid://cpyav4hudgck2" path="res://Scenes/EnemySpawner.tscn" id="1_7bgh8"]
 [ext_resource type="PackedScene" uid="uid://bbjyvpeclx6yg" path="res://Scenes/Environment/road.tscn" id="1_pjeki"]
+[ext_resource type="PackedScene" uid="uid://cxud6tpmocqjr" path="res://Scenes/timeline.tscn" id="1_u8y25"]
 [ext_resource type="PackedScene" uid="uid://bnrerg0mjwy14" path="res://Scenes/gate.tscn" id="2_xilbr"]
 [ext_resource type="PackedScene" uid="uid://cqgodgr6cmq7k" path="res://Scenes/Entities/Dogs/Dog.tscn" id="3_2hpnd"]
 [ext_resource type="PackedScene" uid="uid://bpflis6svffl0" path="res://Scenes/WaypointSystem/waypoint_manager.tscn" id="4_kqchx"]
@@ -11,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://uuululr6h2ww" path="res://Scenes/Notes/cryo_note.tscn" id="9_p3r05"]
 
 [node name="TestLevel" type="Node2D"]
+
+[node name="Timeline" parent="." instance=ExtResource("1_u8y25")]
+offset_right = -16.128
+offset_bottom = -7.776
 
 [node name="EnemySpawner" parent="." node_paths=PackedStringArray("waypoint_manager") instance=ExtResource("1_7bgh8")]
 position = Vector2(-32, 480)
@@ -74,4 +79,3 @@ position = Vector2(536, -192)
 [node name="Cat" parent="." instance=ExtResource("7_q3vfd")]
 position = Vector2(224, 352)
 attack_list = Array[PackedScene]([ExtResource("9_p3r05"), ExtResource("9_8y58c")])
-attack_cooldown = 10.0
