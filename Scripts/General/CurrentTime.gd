@@ -4,6 +4,7 @@ signal looped
 
 func _physics_process(_delta):
 	if is_colliding():
+		print("colliding")
 		var collider = get_collider()
 		if collider and collider.get_parent():
 			var parent = collider.get_parent()

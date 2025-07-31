@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://o0uslcni7qaf"]
+[gd_scene load_steps=5 format=3 uid="uid://o0uslcni7qaf"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Cats/Cat.gd" id="1_lnaah"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ykqyk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bwgay"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s57sw"]
+radius = 24.0
 
 [node name="Cat" type="Node2D"]
 script = ExtResource("1_lnaah")
@@ -21,3 +24,9 @@ collision_mask = 2
 [node name="Collision" type="CollisionShape2D" parent="AggressionArea"]
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_bwgay")
+
+[node name="CatArea" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="Collision" type="CollisionShape2D" parent="CatArea"]
+shape = SubResource("CircleShape2D_s57sw")

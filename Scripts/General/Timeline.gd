@@ -2,7 +2,7 @@ extends Control
 
 @onready var current_time: TextureRect = $TextureRect
 @onready var panel: PanelContainer = $PanelContainer
-@export var bpm: int = 240
+@export var bpm: int = 480
 
 func _process(delta):
 	current_time.position.x += bpm * delta
