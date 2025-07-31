@@ -77,6 +77,7 @@ func _fire_note(note_scene: PackedScene):
 
 	get_tree().current_scene.add_child(note)
 	
-func _add_example_attack_list()->void:
-	
+func add_example_attack_list()->void:
+	var note = load("res://Scenes/Notes/note.tscn")
+	attack_list.append(note)
 	pass

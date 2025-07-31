@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5agh2k01gjwf"]
+
+[ext_resource type="Script" path="res://Scripts/General/buildingScript.gd" id="1_2g5dl"]
+[ext_resource type="TileSet" uid="uid://bao1t0pq8iv6j" path="res://TileSet/main_tileset.tres" id="3_f0n47"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2g5dl")
+
+[node name="Ground" type="TileMapLayer" parent="."]
+z_index = 1
+tile_set = ExtResource("3_f0n47")
+
+[node name="Preview" type="TileMapLayer" parent="."]
+modulate = Color(1, 1, 1, 0.47451)
+z_index = 1
+tile_set = ExtResource("3_f0n47")
+y_sort_origin = -1
