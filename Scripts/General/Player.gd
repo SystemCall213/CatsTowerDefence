@@ -24,20 +24,20 @@ func _ready():
 	note_players = [note_player1, note_player2, note_player3]
 
 func _process(_delta):
-	if not cat_mode:
-		return
+	if cat_mode:
+		for key in note_paths.keys():
+			if Input.is_action_just_pressed(key):
+				var path = note_paths[key]
+				_play_note(path)
 
-	for key in note_paths.keys():
-		if Input.is_action_just_pressed(key):
-			var path = note_paths[key]
-			_play_note(path)
+				# Add key to cat combination
+				current_cat.combination.add_char(key)
 
-			# Add key to cat combination
-			current_cat.combination.add_char(key)
-
-	if Input.is_action_just_pressed("SPACE"):
-		current_cat.combination.execute()
-		cat_mode = false
+		if Input.is_action_just_pressed("SPACE"):
+			current_cat.combination.execute()
+			cat_mode = false
+	
+	
 
 func _play_note(path: String):
 	var selected_player: AudioStreamPlayer2D = null

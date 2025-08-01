@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bpflis6svffl0" path="res://Scenes/WaypointSystem/waypoint_manager.tscn" id="4_kqchx"]
 [ext_resource type="PackedScene" uid="uid://dp4vbs068eq1c" path="res://Scenes/WaypointSystem/waypoint.tscn" id="5_pv4pb"]
 [ext_resource type="PackedScene" uid="uid://bkj6bxgt2277y" path="res://Scenes/Building/BuildingScene.tscn" id="9_admk3"]
-[ext_resource type="PackedScene" uid="uid://b12kk7mkabg8a" path="res://Scenes/ui.tscn" id="9_k67ib"]
+[ext_resource type="PackedScene" path="res://Scenes/ui.tscn" id="9_k67ib"]
 [ext_resource type="TileSet" uid="uid://bewqq0e73mcax" path="res://TileSet/bacground_tileset.tres" id="12_211sv"]
 
 [node name="TestLevel" type="Control"]
