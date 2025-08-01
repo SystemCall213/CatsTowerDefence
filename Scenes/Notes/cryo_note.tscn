@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://uuululr6h2ww"]
+[gd_scene load_steps=10 format=3 uid="uid://uuululr6h2ww"]
 
 [ext_resource type="Script" path="res://Scripts/MusicNotes/CryoNote.gd" id="1_vjpdp"]
 [ext_resource type="Texture2D" uid="uid://xavbbyuqxd40" path="res://Assets/CryoNote.png" id="2_54um1"]
-[ext_resource type="Texture2D" uid="uid://dtsbtmdejtbc7" path="res://Assets/C_Water.png" id="2_w0sbc"]
 [ext_resource type="AudioStream" uid="uid://b74vb1sfp60of" path="res://Assets/Music/Notes/c.mp3" id="4_1n4qd"]
 [ext_resource type="AudioStream" uid="uid://vrtp2p6kgsxv" path="res://Assets/Music/Notes/e.mp3" id="5_rrjht"]
 [ext_resource type="AudioStream" uid="uid://dfnp46el2h28p" path="res://Assets/Music/Notes/f.mp3" id="6_ddbd1"]
@@ -50,7 +49,7 @@ scale = Vector2(0.5, 0.5)
 emitting = false
 amount = 25
 process_material = SubResource("ParticleProcessMaterial_j6wgt")
-texture = ExtResource("2_w0sbc")
+texture = ExtResource("2_54um1")
 one_shot = true
 explosiveness = 0.4
 randomness = 1.0

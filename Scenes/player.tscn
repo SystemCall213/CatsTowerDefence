@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://duo3m7vn87lj1"]
+[gd_scene load_steps=3 format=3 uid="uid://duo3m7vn87lj1"]
 
 [ext_resource type="Script" path="res://Scripts/General/Player.gd" id="1_4b7fx"]
+[ext_resource type="Texture2D" uid="uid://g3hh1y4ca0qb" path="res://Assets/enemy_aquired.png" id="2_p0oho"]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_4b7fx")
@@ -13,3 +14,7 @@ volume_db = 10.0
 
 [node name="NotePlayer3" type="AudioStreamPlayer2D" parent="."]
 volume_db = 10.0
+
+[node name="EnemyPointer" type="Sprite2D" parent="."]
+z_index = 10
+texture = ExtResource("2_p0oho")

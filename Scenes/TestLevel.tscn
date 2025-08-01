@@ -60,21 +60,45 @@ enemies_to_spawn = {
 ExtResource("3_2hpnd"): 5
 }
 
+[node name="EnemySpawner2" parent="." node_paths=PackedStringArray("waypoint_manager") instance=ExtResource("1_7bgh8")]
+position = Vector2(93, 24)
+waypoint_manager = NodePath("../WaypointManager2")
+enemies_to_spawn = {
+ExtResource("3_2hpnd"): 5
+}
+
 [node name="Gate" parent="." instance=ExtResource("2_xilbr")]
 position = Vector2(456, 288)
 
 [node name="WaypointManager" parent="." instance=ExtResource("4_kqchx")]
 position = Vector2(-32, 480)
-waypoints = Array[NodePath]([NodePath("Waypoint"), NodePath("Waypoint3"), NodePath("Waypoint2")])
+waypoints = Array[NodePath]([NodePath("Waypoint4"), NodePath("Waypoint"), NodePath("Waypoint2"), NodePath("Waypoint3")])
+
+[node name="Waypoint4" parent="WaypointManager" instance=ExtResource("5_pv4pb")]
 
 [node name="Waypoint" parent="WaypointManager" instance=ExtResource("5_pv4pb")]
 position = Vector2(192, 0)
 
-[node name="Waypoint3" parent="WaypointManager" instance=ExtResource("5_pv4pb")]
+[node name="Waypoint2" parent="WaypointManager" instance=ExtResource("5_pv4pb")]
 position = Vector2(192, -192)
 
-[node name="Waypoint2" parent="WaypointManager" instance=ExtResource("5_pv4pb")]
+[node name="Waypoint3" parent="WaypointManager" instance=ExtResource("5_pv4pb")]
 position = Vector2(536, -192)
+
+[node name="WaypointManager2" parent="." instance=ExtResource("4_kqchx")]
+position = Vector2(93, 24)
+waypoints = Array[NodePath]([NodePath("Waypoint4"), NodePath("Waypoint"), NodePath("Waypoint2"), NodePath("Waypoint3")])
+
+[node name="Waypoint4" parent="WaypointManager2" instance=ExtResource("5_pv4pb")]
+
+[node name="Waypoint" parent="WaypointManager2" instance=ExtResource("5_pv4pb")]
+position = Vector2(67, 0)
+
+[node name="Waypoint2" parent="WaypointManager2" instance=ExtResource("5_pv4pb")]
+position = Vector2(67, 264)
+
+[node name="Waypoint3" parent="WaypointManager2" instance=ExtResource("5_pv4pb")]
+position = Vector2(411, 264)
 
 [node name="Node2D" parent="." instance=ExtResource("9_admk3")]
 

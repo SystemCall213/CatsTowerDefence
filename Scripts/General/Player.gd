@@ -2,10 +2,13 @@ extends Node2D
 
 var cat_mode = false
 var current_cat: Cat
+var current_dog_target: Dog
 
 @onready var note_player1 = $NotePlayer1
 @onready var note_player2 = $NotePlayer2
 @onready var note_player3 = $NotePlayer3
+
+@onready var enemy_pointer: Sprite2D = $EnemyPointer
 
 var note_players: Array[AudioStreamPlayer2D] = []
 
@@ -36,8 +39,27 @@ func _process(_delta):
 		if Input.is_action_just_pressed("SPACE"):
 			current_cat.combination.execute()
 			cat_mode = false
+	else:
+		if is_instance_valid(current_dog_target):
+			enemy_pointer.show()
+			for key in CombinationsDictionary.Combinations.keys():
+				if Input.is_action_just_pressed(key):
+					var note_scene: PackedScene = CombinationsDictionary.Combinations[key]
+					if note_scene:
+						var note = note_scene.instantiate() as Note
+						var viewport_size = get_viewport().get_visible_rect().size
+						note.set_target(current_dog_target)
+						note.global_position = viewport_size / 2  # center of screen
+						get_tree().current_scene.add_child(note)
+		else:
+			current_dog_target = null
+			enemy_pointer.hide()
 	
+	var closest_dog: Dog = GameManager.get_enemy_closest_to_goal()
 	
+	if closest_dog:
+		current_dog_target = closest_dog
+		enemy_pointer.global_position = closest_dog.global_position
 
 func _play_note(path: String):
 	var selected_player: AudioStreamPlayer2D = null

@@ -21,6 +21,7 @@ func _ready():
 		waypoints = waypoint_manager.get_waypoints()
 		current_hp = max_hp
 		refresh_health()
+	GameManager.enemies.append(self)
 
 func set_current_hp(value: int) -> void:
 	current_hp = clamp(value, 0, max_hp)
