@@ -67,7 +67,6 @@ func place_tile(tile_pos: Vector2i):
 	
 	var world_pos = ground.map_to_local(tile_pos)
 	placed_cat.position = world_pos  
-	placed_cat.add_example_attack_list()
 	Player.cat_mode = true
 	Player.current_cat = placed_cat
 	add_child(placed_cat)

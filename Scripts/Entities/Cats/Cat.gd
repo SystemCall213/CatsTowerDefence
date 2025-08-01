@@ -5,7 +5,7 @@ class_name Cat
 @onready var combination: NotesCombination = $Combination
 
 @export var attack_list: Array[PackedScene]
-@export var attack_interval: float = 0.2  # Interval between notes in a burst
+@export var attack_interval: float = 0.3  # Interval between notes in a burst
 
 var current_target: Dog = null
 var detected_dogs: Array[Dog] = []
@@ -76,8 +76,3 @@ func _fire_note(note_scene: PackedScene):
 	note.global_position = global_position
 
 	get_tree().current_scene.add_child(note)
-	
-func add_example_attack_list()->void:
-	var note = load("res://Scenes/Notes/note.tscn")
-	attack_list.append(note)
-	pass

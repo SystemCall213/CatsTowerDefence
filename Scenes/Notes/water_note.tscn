@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0u0us8igl2lp"]
+[gd_scene load_steps=10 format=3 uid="uid://c0u0us8igl2lp"]
 
 [ext_resource type="Script" path="res://Scripts/MusicNotes/WaterNote.gd" id="1_svnff"]
 [ext_resource type="Texture2D" uid="uid://dtsbtmdejtbc7" path="res://Assets/C_Water.png" id="2_ol8ma"]
+[ext_resource type="AudioStream" uid="uid://btvq18vmqbxic" path="res://Assets/Music/Notes/d.mp3" id="3_s1tve"]
+[ext_resource type="AudioStream" uid="uid://dfnp46el2h28p" path="res://Assets/Music/Notes/f.mp3" id="4_sn0sm"]
+[ext_resource type="AudioStream" uid="uid://cd3lwhr8vslf7" path="res://Assets/Music/Notes/a.mp3" id="5_1oshl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8hcql"]
 
@@ -50,3 +53,17 @@ texture = ExtResource("2_ol8ma")
 one_shot = true
 explosiveness = 0.4
 randomness = 1.0
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="NotePlayer1" type="AudioStreamPlayer2D" parent="Players"]
+stream = ExtResource("3_s1tve")
+volume_db = -5.0
+
+[node name="NotePlayer2" type="AudioStreamPlayer2D" parent="Players"]
+stream = ExtResource("4_sn0sm")
+volume_db = -5.0
+
+[node name="NotePlayer3" type="AudioStreamPlayer2D" parent="Players"]
+stream = ExtResource("5_1oshl")
+volume_db = -5.0
