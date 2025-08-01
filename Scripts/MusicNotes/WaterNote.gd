@@ -9,6 +9,7 @@ func _ready():
 	spin_speed = 10.0
 	damage = 1
 	element = Elements.Type.C_WATER
+	homing_strength = speed / 50
 
 func apply_element():
 	if check_elements_effects():

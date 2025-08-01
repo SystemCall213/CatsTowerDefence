@@ -49,6 +49,8 @@ func _process(_delta):
 						var note = note_scene.instantiate() as Note
 						var viewport_size = get_viewport().get_visible_rect().size
 						note.set_target(current_dog_target)
+						var finder_strategy = FindClosestToGoalStrategy.new()
+						note.set_finder_strategy(finder_strategy)
 						note.global_position = viewport_size / 2  # center of screen
 						get_tree().current_scene.add_child(note)
 		else:

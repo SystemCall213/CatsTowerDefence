@@ -17,9 +17,9 @@ var play_interval: float = 0.1
 
 var direction
 var death_timer_started := false
-
 var velocity_direction: Vector2
-var homing_strength: float = 0.5 
+var homing_strength: float = 3
+var finderStrategy: EnemyFinderStrategy
 
 func init():
 	area = $Area
@@ -28,26 +28,41 @@ func init():
 func set_target(_target: Dog) -> void:
 	target = _target
 
+func set_finder_strategy(_strategy: EnemyFinderStrategy):
+	finderStrategy = _strategy
+
 func _ready():
 	area.connect("body_entered", _on_area_entered)
 	
-	velocity_direction = Vector2.RIGHT.rotated(randf() * TAU) 
+	direction = (target.global_position - global_position).normalized()
+
+	var max_angle_deg := 60.0
+	var angle_rad := deg_to_rad(randf_range(180 - max_angle_deg, 180 + max_angle_deg))
+	velocity_direction = direction.rotated(angle_rad)
+
 
 	var note_players = [note_player1, note_player2, note_player3]
 	for player in note_players:
 		await get_tree().create_timer(play_interval).timeout
 		player.play()
-
+	
+	if not finderStrategy:
+		finderStrategy = DontFindStrategy.new()
 
 func _physics_process(delta):
 	if is_instance_valid(target):
 		var desired_dir = (target.global_position - global_position).normalized()
+		# Smoothly steer toward target
 		velocity_direction = velocity_direction.move_toward(desired_dir, homing_strength * delta)
 	else:
-		if not death_timer_started:
-			death_timer_started = true
-			await get_tree().create_timer(1.0).timeout
-			queue_free()
+		var new_target = finderStrategy.look_for_enemy()
+		if new_target:
+			target = new_target
+		else:
+			if not death_timer_started:
+				death_timer_started = true
+				await get_tree().create_timer(1.0).timeout
+				queue_free()
 
 	position += velocity_direction.normalized() * speed * delta
 	rotation += spin_speed * delta

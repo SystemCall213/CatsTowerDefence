@@ -9,6 +9,7 @@ func _ready():
 	spin_speed = 20.0
 	damage = 3
 	element = Elements.Type.G_CRYO
+	homing_strength = speed / 200
 
 func apply_element():
 	if check_elements_effects():
