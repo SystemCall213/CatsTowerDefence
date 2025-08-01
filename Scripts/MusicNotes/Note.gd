@@ -16,7 +16,6 @@ var play_interval: float = 0.1
 @export var damage: int = 2
 
 var direction
-var death_timer_started := false
 var velocity_direction: Vector2
 var homing_strength: float = 3
 var finderStrategy: EnemyFinderStrategy
@@ -59,10 +58,7 @@ func _physics_process(delta):
 		if new_target:
 			target = new_target
 		else:
-			if not death_timer_started:
-				death_timer_started = true
-				await get_tree().create_timer(1.0).timeout
-				queue_free()
+			_explode()
 
 	position += velocity_direction.normalized() * speed * delta
 	rotation += spin_speed * delta

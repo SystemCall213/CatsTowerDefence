@@ -2,19 +2,21 @@ extends CharacterBody2D
 class_name Dog
 
 @export var waypoint_manager: WaypointManager = null
+@export var current_hp: int
+@export var max_hp: int = 10
+@export var damage:= 1
+
 var waypoints: Array = []
 var current_index: int = 0
 var speed_orig: float = 50.0
 var speed: float = 50.0
 var turn_speed: float = 5.0
-@export var current_hp: int
-@export var max_hp: int = 10
-@export var damage:= 1
 
 var effects: Array[Effect] = []
 var elements: Array[Element] = []
 
 @onready var hp_bar: HPBar = $ProgressBar
+@onready var sprite: Sprite2D = $Sprite
 
 func _ready():
 	if waypoint_manager:
@@ -26,7 +28,7 @@ func _ready():
 func set_current_hp(value: int) -> void:
 	current_hp = clamp(value, 0, max_hp)
 	if current_hp == 0:
-		queue_free()
+		die()
 	refresh_health()
 
 func refresh_health():
@@ -49,4 +51,8 @@ func _physics_process(delta):
 	else:
 		current_index += 1
 		if current_index >= waypoints.size():
-			queue_free()
+			die()
+
+func die():
+	GameManager.enemies.erase(self)
+	queue_free()

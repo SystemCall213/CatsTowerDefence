@@ -27,6 +27,9 @@ func _ready():
 	note_players = [note_player1, note_player2, note_player3]
 
 func _process(_delta):
+	if Input.is_action_just_pressed("ENTER") and not WaveManager.wave_in_process:
+		WaveManager.start_wave()
+	
 	if cat_mode:
 		for key in note_paths.keys():
 			if Input.is_action_just_pressed(key):

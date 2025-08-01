@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://b17by6d1c5sbd"]
+[gd_scene load_steps=11 format=4 uid="uid://b17by6d1c5sbd"]
 
 [ext_resource type="PackedScene" uid="uid://cpyav4hudgck2" path="res://Scenes/EnemySpawner.tscn" id="1_7bgh8"]
 [ext_resource type="PackedScene" uid="uid://bbjyvpeclx6yg" path="res://Scenes/Environment/road.tscn" id="1_pjeki"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dp4vbs068eq1c" path="res://Scenes/WaypointSystem/waypoint.tscn" id="5_pv4pb"]
 [ext_resource type="PackedScene" uid="uid://bkj6bxgt2277y" path="res://Scenes/Building/BuildingScene.tscn" id="9_admk3"]
 [ext_resource type="PackedScene" path="res://Scenes/ui.tscn" id="9_k67ib"]
+[ext_resource type="PackedScene" uid="uid://dwdteeg5pn20s" path="res://Scenes/WaveInfo/WaveInfo.tscn" id="10_guqac"]
 [ext_resource type="TileSet" uid="uid://bewqq0e73mcax" path="res://TileSet/bacground_tileset.tres" id="12_211sv"]
 
 [node name="TestLevel" type="Control"]
@@ -53,52 +54,8 @@ position = Vector2(288, 288)
 tile_map_data = PackedByteArray("AAACAAYAAQAAAAAAAAACAAUAAQAAAAAAAAADAAQAAQAAAAAAAFAEAAQAAQAAAAAAAFAFAAQAAQAAAAAAAFAGAAQAAQAAAAAAAFABAAcAAQAAAAAAAFAAAAcAAQAAAAAAAFACAAQAAQABAAAAAAACAAcAAQABAAAAADAAAAAAAQADAAAAAAAAAAEAAQADAAAAAAAAAAIAAQADAAAAAAAAAAMAAQADAAAAAAAAAAQAAQADAAAAAAAAAAUAAQADAAAAAAAAAAYAAQADAAAAAAABAAAAAQADAAAAAAABAAEAAQADAAAAAAABAAIAAQADAAAAAAABAAMAAQADAAAAAAABAAQAAQADAAAAAAABAAUAAQADAAAAAAABAAYAAQADAAAAAAACAAAAAQADAAAAAAACAAEAAQADAAAAAAACAAIAAQADAAAAAAACAAMAAQADAAAAAAADAAAAAQADAAAAAAADAAEAAQADAAAAAAADAAIAAQADAAAAAAADAAMAAQADAAAAAAAEAAAAAQADAAAAAAAEAAEAAQADAAAAAAAEAAIAAQADAAAAAAAEAAMAAQADAAAAAAAFAAAAAQADAAAAAAAFAAEAAQADAAAAAAAFAAIAAQADAAAAAAAFAAMAAQADAAAAAAAGAAAAAQADAAAAAAAGAAEAAQADAAAAAAAGAAIAAQADAAAAAAAGAAMAAQADAAAAAAADAAUAAQADAAAAAAADAAYAAQADAAAAAAADAAcAAQADAAAAAAADAAgAAQADAAAAAAADAAkAAQADAAAAAAAEAAUAAQADAAAAAAAEAAYAAQADAAAAAAAEAAcAAQADAAAAAAAEAAgAAQADAAAAAAAEAAkAAQADAAAAAAAFAAUAAQADAAAAAAAFAAYAAQADAAAAAAAFAAcAAQADAAAAAAAFAAgAAQADAAAAAAAFAAkAAQADAAAAAAAGAAUAAQADAAAAAAAGAAYAAQADAAAAAAAGAAcAAQADAAAAAAAGAAgAAQADAAAAAAAGAAkAAQADAAAAAAAAAAgAAQADAAAAAAAAAAkAAQADAAAAAAABAAgAAQADAAAAAAABAAkAAQADAAAAAAACAAgAAQADAAAAAAACAAkAAQADAAAAAAAHAAYAAQADAAAAAAAHAAcAAQADAAAAAAAHAAgAAQADAAAAAAAHAAkAAQADAAAAAAAIAAYAAQADAAAAAAAIAAcAAQADAAAAAAAIAAgAAQADAAAAAAAIAAkAAQADAAAAAAAJAAYAAQADAAAAAAAJAAcAAQADAAAAAAAJAAgAAQADAAAAAAAJAAkAAQADAAAAAAAKAAYAAQADAAAAAAAKAAcAAQADAAAAAAAKAAgAAQADAAAAAAAKAAkAAQADAAAAAAALAAYAAQADAAAAAAALAAcAAQADAAAAAAALAAgAAQADAAAAAAALAAkAAQADAAAAAAAMAAYAAQADAAAAAAAMAAcAAQADAAAAAAAMAAgAAQADAAAAAAAMAAkAAQADAAAAAAANAAYAAQADAAAAAAANAAcAAQADAAAAAAANAAgAAQADAAAAAAANAAkAAQADAAAAAAAOAAYAAQADAAAAAAAOAAcAAQADAAAAAAAOAAgAAQADAAAAAAAOAAkAAQADAAAAAAAPAAYAAQADAAAAAAAPAAcAAQADAAAAAAAPAAgAAQADAAAAAAAPAAkAAQADAAAAAAAQAAYAAQADAAAAAAAQAAcAAQADAAAAAAAQAAgAAQADAAAAAAAQAAkAAQADAAAAAAARAAYAAQADAAAAAAARAAcAAQADAAAAAAARAAgAAQADAAAAAAARAAkAAQADAAAAAAAIAAAAAQADAAAAAAAIAAEAAQADAAAAAAAIAAIAAQADAAAAAAAIAAMAAQADAAAAAAAIAAQAAQADAAAAAAAIAAUAAQADAAAAAAAJAAAAAQADAAAAAAAJAAEAAQADAAAAAAAJAAIAAQADAAAAAAAJAAMAAQADAAAAAAAJAAQAAQADAAAAAAAJAAUAAQADAAAAAAAKAAAAAQADAAAAAAAKAAEAAQADAAAAAAAKAAIAAQADAAAAAAAKAAMAAQADAAAAAAAKAAQAAQADAAAAAAAKAAUAAQADAAAAAAALAAAAAQADAAAAAAALAAEAAQADAAAAAAALAAIAAQADAAAAAAALAAMAAQADAAAAAAALAAQAAQADAAAAAAALAAUAAQADAAAAAAAMAAAAAQADAAAAAAAMAAEAAQADAAAAAAAMAAIAAQADAAAAAAAMAAMAAQADAAAAAAAMAAQAAQADAAAAAAAMAAUAAQADAAAAAAANAAAAAQADAAAAAAANAAEAAQADAAAAAAANAAIAAQADAAAAAAANAAMAAQADAAAAAAANAAQAAQADAAAAAAANAAUAAQADAAAAAAAOAAAAAQADAAAAAAAOAAEAAQADAAAAAAAOAAIAAQADAAAAAAAOAAMAAQADAAAAAAAOAAQAAQADAAAAAAAOAAUAAQADAAAAAAAPAAAAAQADAAAAAAAPAAEAAQADAAAAAAAPAAIAAQADAAAAAAAPAAMAAQADAAAAAAAPAAQAAQADAAAAAAAPAAUAAQADAAAAAAAQAAAAAQADAAAAAAAQAAEAAQADAAAAAAAQAAIAAQADAAAAAAAQAAMAAQADAAAAAAAQAAQAAQADAAAAAAAQAAUAAQADAAAAAAARAAAAAQADAAAAAAARAAEAAQADAAAAAAARAAIAAQADAAAAAAARAAMAAQADAAAAAAARAAQAAQADAAAAAAARAAUAAQADAAAAAAAHAAAAAQADAAAAAAAHAAEAAQADAAAAAAAHAAIAAQADAAAAAAAHAAUAAQADAAAAAAAHAAQAAQADAAAAAAAHAAMAAQADAAAAAAA=")
 tile_set = ExtResource("12_211sv")
 
-[node name="EnemySpawner" parent="." node_paths=PackedStringArray("waypoint_manager") instance=ExtResource("1_7bgh8")]
-position = Vector2(-32, 480)
-waypoint_manager = NodePath("../WaypointManager")
-enemies_to_spawn = {
-ExtResource("3_2hpnd"): 5
-}
-
-[node name="EnemySpawner2" parent="." node_paths=PackedStringArray("waypoint_manager") instance=ExtResource("1_7bgh8")]
-position = Vector2(93, 24)
-waypoint_manager = NodePath("../WaypointManager2")
-enemies_to_spawn = {
-ExtResource("3_2hpnd"): 5
-}
-
 [node name="Gate" parent="." instance=ExtResource("2_xilbr")]
 position = Vector2(456, 288)
-
-[node name="WaypointManager" parent="." instance=ExtResource("4_kqchx")]
-position = Vector2(-32, 480)
-waypoints = Array[NodePath]([NodePath("Waypoint4"), NodePath("Waypoint"), NodePath("Waypoint2"), NodePath("Waypoint3")])
-
-[node name="Waypoint4" parent="WaypointManager" instance=ExtResource("5_pv4pb")]
-
-[node name="Waypoint" parent="WaypointManager" instance=ExtResource("5_pv4pb")]
-position = Vector2(192, 0)
-
-[node name="Waypoint2" parent="WaypointManager" instance=ExtResource("5_pv4pb")]
-position = Vector2(192, -192)
-
-[node name="Waypoint3" parent="WaypointManager" instance=ExtResource("5_pv4pb")]
-position = Vector2(536, -192)
-
-[node name="WaypointManager2" parent="." instance=ExtResource("4_kqchx")]
-position = Vector2(93, 24)
-waypoints = Array[NodePath]([NodePath("Waypoint4"), NodePath("Waypoint"), NodePath("Waypoint2"), NodePath("Waypoint3")])
-
-[node name="Waypoint4" parent="WaypointManager2" instance=ExtResource("5_pv4pb")]
-
-[node name="Waypoint" parent="WaypointManager2" instance=ExtResource("5_pv4pb")]
-position = Vector2(67, 0)
-
-[node name="Waypoint2" parent="WaypointManager2" instance=ExtResource("5_pv4pb")]
-position = Vector2(67, 264)
-
-[node name="Waypoint3" parent="WaypointManager2" instance=ExtResource("5_pv4pb")]
-position = Vector2(411, 264)
 
 [node name="Node2D" parent="." instance=ExtResource("9_admk3")]
 
@@ -107,13 +64,78 @@ anchor_mode = 0
 
 [node name="UI" parent="." instance=ExtResource("9_k67ib")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 24.0
 offset_top = 280.0
 offset_right = 24.0
 offset_bottom = 280.0
+grow_horizontal = 1
+grow_vertical = 1
 size_flags_horizontal = 4
+
+[node name="Road1" type="Node2D" parent="."]
+
+[node name="WaypointManager" parent="Road1" instance=ExtResource("4_kqchx")]
+position = Vector2(-32, 480)
+waypoints = Array[NodePath]([NodePath("Waypoint4"), NodePath("Waypoint"), NodePath("Waypoint2"), NodePath("Waypoint3")])
+
+[node name="Waypoint4" parent="Road1/WaypointManager" instance=ExtResource("5_pv4pb")]
+
+[node name="Waypoint" parent="Road1/WaypointManager" instance=ExtResource("5_pv4pb")]
+position = Vector2(192, 0)
+
+[node name="Waypoint2" parent="Road1/WaypointManager" instance=ExtResource("5_pv4pb")]
+position = Vector2(192, -192)
+
+[node name="Waypoint3" parent="Road1/WaypointManager" instance=ExtResource("5_pv4pb")]
+position = Vector2(536, -192)
+
+[node name="EnemySpawner" parent="Road1" node_paths=PackedStringArray("waypoint_manager") instance=ExtResource("1_7bgh8")]
+position = Vector2(-32, 480)
+waypoint_manager = NodePath("../WaypointManager")
+waves_scenes = Array[PackedScene]([ExtResource("3_2hpnd")])
+counts = Array[int]([4])
+
+[node name="WaveInfo" parent="Road1" node_paths=PackedStringArray("spawners") instance=ExtResource("10_guqac")]
+custom_minimum_size = Vector2(64, 64)
+offset_top = 512.0
+offset_right = 192.0
+offset_bottom = 576.0
+spawners = [NodePath("../EnemySpawner")]
+
+[node name="Road2" type="Node2D" parent="."]
+
+[node name="WaypointManager2" parent="Road2" instance=ExtResource("4_kqchx")]
+position = Vector2(93, 24)
+waypoints = Array[NodePath]([NodePath("Waypoint4"), NodePath("Waypoint"), NodePath("Waypoint2"), NodePath("Waypoint3")])
+
+[node name="Waypoint4" parent="Road2/WaypointManager2" instance=ExtResource("5_pv4pb")]
+
+[node name="Waypoint" parent="Road2/WaypointManager2" instance=ExtResource("5_pv4pb")]
+position = Vector2(67, 0)
+
+[node name="Waypoint2" parent="Road2/WaypointManager2" instance=ExtResource("5_pv4pb")]
+position = Vector2(67, 264)
+
+[node name="Waypoint3" parent="Road2/WaypointManager2" instance=ExtResource("5_pv4pb")]
+position = Vector2(411, 264)
+
+[node name="EnemySpawner2" parent="Road2" node_paths=PackedStringArray("waypoint_manager") instance=ExtResource("1_7bgh8")]
+position = Vector2(93, 24)
+waypoint_manager = NodePath("../WaypointManager2")
+waves_scenes = Array[PackedScene]([ExtResource("3_2hpnd"), ExtResource("3_2hpnd")])
+counts = Array[int]([5, 3])
+
+[node name="EnemySpawner3" parent="Road2" node_paths=PackedStringArray("waypoint_manager") instance=ExtResource("1_7bgh8")]
+position = Vector2(93, 24)
+waypoint_manager = NodePath("../WaypointManager2")
+waves_scenes = Array[PackedScene]([ExtResource("3_2hpnd")])
+counts = Array[int]([2])
+
+[node name="WaveInfo" parent="Road2" node_paths=PackedStringArray("spawners") instance=ExtResource("10_guqac")]
+offset_top = 96.0
+offset_right = 192.0
+offset_bottom = 160.0
+spawners = [NodePath("../EnemySpawner2"), NodePath("../EnemySpawner3")]
