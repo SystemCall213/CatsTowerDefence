@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://b12kk7mkabg8a"]
+
+[ext_resource type="Script" path="res://Scenes/ui.gd" id="1_h1sw8"]
+[ext_resource type="PackedScene" uid="uid://cxud6tpmocqjr" path="res://Scenes/timeline.tscn" id="1_sqpod"]
+[ext_resource type="PackedScene" uid="uid://b2hx6wmmew2v2" path="res://Scenes/BottomPanel.tscn" id="2_64bka"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h1sw8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Timeline" parent="CanvasLayer/VBoxContainer" instance=ExtResource("1_sqpod")]
+layout_mode = 2
+
+[node name="Container" type="Container" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Control" parent="CanvasLayer/VBoxContainer/CenterContainer" instance=ExtResource("2_64bka")]
+modulate = Color(1, 1, 1, 0.894118)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+metadata/_edit_use_anchors_ = true

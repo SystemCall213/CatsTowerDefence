@@ -1,9 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnrerg0mjwy14"]
+[gd_scene load_steps=4 format=3 uid="uid://bnrerg0mjwy14"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_o0qru"]
+[ext_resource type="Script" path="res://Scenes/gate.gd" id="1_fapn6"]
+[ext_resource type="Texture2D" uid="uid://qug0phm5jflg" path="res://Sprites/gate.png" id="2_aros6"]
 
-[node name="Gate" type="Sprite2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4cv1"]
+size = Vector2(64, 64)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-scale = Vector2(96, 16)
-mesh = SubResource("QuadMesh_o0qru")
+[node name="Gate" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_fapn6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e4cv1")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(9.53674e-07, 9.53674e-07)
+texture = ExtResource("2_aros6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

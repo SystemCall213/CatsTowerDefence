@@ -21,6 +21,7 @@ CurrentTime="*res://Scripts/General/CurrentTime.gd"
 BuildingScene="*res://Scenes/Building/BuildingScene.tscn"
 BuildingManager="*res://Scripts/General/BuildingManager.gd"
 Player="*res://Scenes/player.tscn"
+ResourceManager="*res://Scripts/General/ResourceManager.gd"
 
 [dotnet]
 

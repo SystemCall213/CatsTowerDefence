@@ -1,36 +1,68 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2hx6wmmew2v2"]
 
-[ext_resource type="Texture2D" uid="uid://dunsyxjwlib7w" path="res://Sprites/buttonForCat.png" id="1_7fk6n"]
+[ext_resource type="Texture2D" uid="uid://c0x6je3g565mr" path="res://Sprites/buttonForCat.png" id="1_7fk6n"]
 [ext_resource type="Script" path="res://Scenes/bottom_panel.gd" id="1_bhkjg"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bhkjg")
 
 [node name="ButtonTexture" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -63.9999
-offset_top = -55.9999
-offset_right = 16.0001
-offset_bottom = 24.0001
-scale = Vector2(1.6, 1.6)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -73.0
+offset_right = 26.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.84, 1.84)
 texture = ExtResource("1_7fk6n")
 
 [node name="Button" type="Button" parent="ButtonTexture"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -39.0
+offset_right = 34.0
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CatPlacement" type="Sprite2D" parent="ButtonTexture"]
-position = Vector2(32, 45)
+position = Vector2(119.34, 40.125)
+scale = Vector2(0.6, 0.6)
+
+[node name="HpLabel" type="RichTextLabel" parent="ButtonTexture"]
+layout_mode = 0
+offset_left = 56.25
+offset_top = 40.625
+offset_right = 96.25
+offset_bottom = 80.625
+text = "100"
+
+[node name="GoldLabel" type="RichTextLabel" parent="ButtonTexture"]
+layout_mode = 0
+offset_left = 163.75
+offset_top = 42.5
+offset_right = 205.75
+offset_bottom = 68.5
+text = "100"
 
 [connection signal="button_down" from="ButtonTexture/Button" to="." method="_on_button_button_down"]
