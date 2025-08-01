@@ -5,6 +5,7 @@ extends Node2D
 @onready var catScene = load("res://Scenes/Entities/Cats/Cat.tscn")
 var source_id : int
 var selected_tile : Vector2i
+var cat_price:int = 10
  
 var select_mode : bool = false
 var preview_tile : Vector2i:
@@ -21,7 +22,6 @@ var preview_tile : Vector2i:
 		var tile_size
 		if atlas_tile:
 			tile_size = atlas_tile.get_tile_size_in_atlas(selected_tile)
-			print(tile_size)
 		placeable = true
 		for j in range(tile_size.y):
 			for i in range(tile_size.x):
@@ -58,13 +58,15 @@ func _input(event):
  
  
 func on_button_pressed(next_cat_id:Vector2i)->void:
-	select_mode = true
-	selected_tile = next_cat_id
-	pass
- 
+	if ResourceManager.gold >= cat_price:
+		print("clicked")
+		select_mode = true
+		selected_tile = next_cat_id
+		pass
+	 
 func place_tile(tile_pos: Vector2i):
 	var placed_cat = catScene.instantiate()
-	
+	ResourceManager.remove_gold(cat_price)
 	var world_pos = ground.map_to_local(tile_pos)
 	placed_cat.position = world_pos  
 	placed_cat.add_example_attack_list()

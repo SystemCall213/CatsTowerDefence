@@ -3,6 +3,9 @@ extends Control
 @onready var cat_placement = $ButtonTexture/CatPlacement
 var tilemap_size :int = 3
 var selected_cat :Vector2i
+@onready var gold_label = $ButtonTexture/GoldLabel
+@onready var hp_label = $ButtonTexture/HpLabel
+
 
 func _ready():
 	generate_new_cat()
@@ -30,3 +33,10 @@ func generate_new_cat():
 		cat_placement.texture = cat_sprite.texture
 		cat_placement.region_enabled = true
 		cat_placement.region_rect = cat_sprite.region_rect
+
+func updateHpLabel(amount:int):
+	hp_label.text = str(amount)
+	pass
+func updateGoldLabel(amount:int):
+	gold_label.text = str(amount)
+	pass

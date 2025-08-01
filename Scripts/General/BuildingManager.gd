@@ -11,7 +11,6 @@ func get_tiles(layer : TileMapLayer, selected_tile : Vector2i, tile_pos : Vector
 		atlas_tile = layer.tile_set.get_source(source_id)
 	if atlas_tile:
 		tile_size = atlas_tile.get_tile_size_in_atlas(selected_tile)
-		print(tile_size)
  
 	for j in range(tile_size.y):
 		for i in range(tile_size.x):
@@ -19,6 +18,5 @@ func get_tiles(layer : TileMapLayer, selected_tile : Vector2i, tile_pos : Vector
 			if tile not in used_tiles:
 				used_tiles.append(tile)
  
-	print(used_tiles)
-	print(layer.get_used_cells())
+
  
