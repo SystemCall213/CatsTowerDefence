@@ -18,9 +18,14 @@ offset_bottom = 8.024
 script = ExtResource("1_uimv2")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 0
-offset_right = 1120.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -560.0
+offset_right = 560.0
 offset_bottom = 24.0
+grow_horizontal = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(8, 24)

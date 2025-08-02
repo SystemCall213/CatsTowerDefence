@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://m0xehxoqo22u"]
+
+[ext_resource type="Texture2D" uid="uid://dxcq5nhfki5t" path="res://TileSet/resources/catssheet-0.png" id="1_2ga2j"]
+[ext_resource type="Texture2D" uid="uid://dwpo5vbivoaea" path="res://Sprites/TITLE.png" id="1_a8k4s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2266"]
+atlas = ExtResource("1_2ga2j")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0v5g3"]
+atlas = ExtResource("1_2ga2j")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rns71"]
+atlas = ExtResource("1_2ga2j")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sxmll"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_m2266")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v5g3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rns71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v5g3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rns71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v5g3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rns71")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_a8k4s")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 368.0
+offset_right = 398.0
+offset_bottom = 648.0
+theme_override_constants/separation = 18
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Howtoplay" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "How to play"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(792, 400)
+scale = Vector2(0.705078, 0.705078)
+sprite_frames = SubResource("SpriteFrames_sxmll")
+autoplay = "default"

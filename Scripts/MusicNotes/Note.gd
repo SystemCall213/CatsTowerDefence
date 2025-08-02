@@ -59,7 +59,9 @@ func _explode():
 	queue_free()
 
 func apply_element():
-	pass
-
-func check_elements_effects():
-	pass
+	var effectScene = ElementEffects.check_element(target, element)
+	if effectScene:
+		var instance:Effect = effectScene.instantiate()
+		instance.init(target)
+	else:
+		target.get_damaged(damage)

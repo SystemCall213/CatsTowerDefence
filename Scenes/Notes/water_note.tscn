@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0u0us8igl2lp"]
+[gd_scene load_steps=11 format=3 uid="uid://c0u0us8igl2lp"]
 
 [ext_resource type="Script" path="res://Scripts/MusicNotes/WaterNote.gd" id="1_svnff"]
+[ext_resource type="Texture2D" uid="uid://do1v4g1lv1hf5" path="res://Sprites/Notes/waternote.png" id="2_2syo7"]
 [ext_resource type="Texture2D" uid="uid://dtsbtmdejtbc7" path="res://Assets/C_Water.png" id="2_ol8ma"]
 [ext_resource type="AudioStream" uid="uid://btvq18vmqbxic" path="res://Assets/Music/Notes/d.mp3" id="3_s1tve"]
 [ext_resource type="AudioStream" uid="uid://dfnp46el2h28p" path="res://Assets/Music/Notes/f.mp3" id="4_sn0sm"]
@@ -32,10 +33,13 @@ scale_curve = SubResource("CurveTexture_chm5j")
 [node name="WaterNote" type="Node2D"]
 z_index = 2
 script = ExtResource("1_svnff")
+speed = null
+spin_speed = null
+damage = null
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_ol8ma")
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_2syo7")
 
 [node name="Area" type="Area2D" parent="."]
 collision_mask = 2

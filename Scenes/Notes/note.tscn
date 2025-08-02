@@ -32,6 +32,9 @@ scale_curve = SubResource("CurveTexture_chm5j")
 [node name="Note" type="Node2D"]
 z_index = 2
 script = ExtResource("1_ii4ab")
+speed = null
+spin_speed = null
+damage = null
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

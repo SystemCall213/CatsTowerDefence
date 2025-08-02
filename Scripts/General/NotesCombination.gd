@@ -17,7 +17,6 @@ func add_char(_symbol: String):
 			combination.append(note_scene)
 			var note_instance = note_scene.instantiate()
 			note_instance.init()
-
 			var texture_rect = TextureRect.new()
 
 			var sprite_node = note_instance.sprite

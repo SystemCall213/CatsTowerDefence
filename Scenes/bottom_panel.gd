@@ -1,14 +1,16 @@
 extends Control
 
-@onready var cat_placement = $ButtonTexture/CatPlacement
+@onready var cat_placement = $CatPlacement
 var tilemap_size :int = 3
 var selected_cat :Vector2i
-@onready var gold_label = $ButtonTexture/GoldLabel
-@onready var hp_label = $ButtonTexture/HpLabel
+@onready var gold_label = $GoldLabel
+@onready var hp_label = $HpLabel
+@onready var progress_bar = $ProgressBar
 
 
 func _ready():
 	generate_new_cat()
+	updateManaProgressBar(100)
 	
 
 
@@ -39,4 +41,10 @@ func updateHpLabel(amount:int):
 	pass
 func updateGoldLabel(amount:int):
 	gold_label.text = str(amount)
+	pass
+func updateManaProgressBar(amount:int):
+	progress_bar.value = amount
+	pass
+func updateMaxManaProgressBar(amount:int):
+	progress_bar.max_value = amount
 	pass

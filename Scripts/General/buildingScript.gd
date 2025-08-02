@@ -79,7 +79,9 @@ func place_tile(tile_pos: Vector2i):
  
 func get_sprite_from_atlas(source_id: int, atlas_coords: Vector2i) -> Sprite2D:
 	var source = ground.tile_set.get_source(source_id)
-
+	print(source)
+	print(source_id)
+	print(atlas_coords)
 	if source is TileSetAtlasSource:
 		var texture = source.get_texture()
 		var region = source.get_tile_texture_region(atlas_coords)

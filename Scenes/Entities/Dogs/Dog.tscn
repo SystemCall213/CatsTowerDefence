@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cqgodgr6cmq7k"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Dogs/Dog.gd" id="1_qits1"]
-[ext_resource type="Texture2D" uid="uid://civbmvv8tnug0" path="res://Assets/Dogs/Dog1.png" id="2_hd1hj"]
+[ext_resource type="Texture2D" uid="uid://bi6142cclo5ot" path="res://Sprites/pies.png" id="2_50r06"]
 [ext_resource type="Script" path="res://Scripts/General/HPBar.gd" id="2_ii57s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6yrw"]
@@ -16,7 +16,8 @@ script = ExtResource("1_qits1")
 shape = SubResource("RectangleShape2D_j6yrw")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_hd1hj")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_50r06")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -40.0

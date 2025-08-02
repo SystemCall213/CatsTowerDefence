@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://bao1t0pq8iv6j" path="res://TileSet/main_tileset.tres" id="3_f0n47"]
 
 [node name="Node2D" type="Node2D"]
+scale = Vector2(0.125, 0.125)
 script = ExtResource("1_2g5dl")
 
 [node name="Ground" type="TileMapLayer" parent="."]

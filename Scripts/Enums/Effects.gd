@@ -7,5 +7,6 @@ enum Type {
 	EXPLOSION,
 	ROOT,
 	KNOCKBACK,
-	SPREAD
+	SPREAD,
+	CONFUSION
 }

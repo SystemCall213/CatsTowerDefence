@@ -1,11 +1,13 @@
 class_name Elements
 
 enum Type {
-	C_WATER,
-	D_FIRE,
-	E_EARTH,
-	F_WIND,
-	G_CRYO,
-	A_OIL,
-	B_LIGHTNING
+	C4_WATER,
+	D4_FIRE,
+	E4_EARTH,
+	F4_WIND,
+	G4_CRYO,
+	A4_OIL,
+	B4_LIGHTNING,
+	C5_DARK,
+	D5_LIGHT
 }

@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://cb82hoboi1q6x"]
+
+[ext_resource type="Script" path="res://Scripts/MusicNotes/OilNote.gd" id="1_8n627"]
+[ext_resource type="Texture2D" uid="uid://b5sk2putpg2d7" path="res://Sprites/Notes/oilnote.png" id="2_143dg"]
+[ext_resource type="Texture2D" uid="uid://dtsbtmdejtbc7" path="res://Assets/C_Water.png" id="3_bqgak"]
+[ext_resource type="AudioStream" uid="uid://b74vb1sfp60of" path="res://Assets/Music/Notes/c.mp3" id="4_k4pek"]
+[ext_resource type="AudioStream" uid="uid://vrtp2p6kgsxv" path="res://Assets/Music/Notes/e.mp3" id="5_irmm1"]
+[ext_resource type="AudioStream" uid="uid://dfnp46el2h28p" path="res://Assets/Music/Notes/f.mp3" id="6_fbo61"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8hcql"]
+
+[sub_resource type="Curve" id="Curve_36th6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.96, 0.417582), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_chm5j"]
+curve = SubResource("Curve_36th6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j6wgt"]
+particle_flag_disable_z = true
+angle_min = -180.0
+angle_max = 180.0
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+angular_velocity_min = 100.0
+angular_velocity_max = 300.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_chm5j")
+
+[node name="OilNote" type="Node2D"]
+z_index = 2
+script = ExtResource("1_8n627")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+self_modulate = Color(0.713804, 0.632168, 0.989414, 1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_143dg")
+
+[node name="Area" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="Area"]
+shape = SubResource("CircleShape2D_8hcql")
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+z_index = 2
+scale = Vector2(0.5, 0.5)
+emitting = false
+amount = 25
+process_material = SubResource("ParticleProcessMaterial_j6wgt")
+texture = ExtResource("3_bqgak")
+one_shot = true
+explosiveness = 0.4
+randomness = 1.0
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="NotePlayer1" type="AudioStreamPlayer2D" parent="Players"]
+stream = ExtResource("4_k4pek")
+volume_db = -5.0
+
+[node name="NotePlayer2" type="AudioStreamPlayer2D" parent="Players"]
+stream = ExtResource("5_irmm1")
+volume_db = -5.0
+
+[node name="NotePlayer3" type="AudioStreamPlayer2D" parent="Players"]
+stream = ExtResource("6_fbo61")
+volume_db = -5.0

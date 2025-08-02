@@ -49,3 +49,13 @@ func _physics_process(delta):
 		current_index += 1
 		if current_index >= waypoints.size():
 			queue_free()
+func _process(delta):
+	for element in elements:
+		if element.update(delta):
+			print("Element expired: ", element.type)
+			elements.erase(element)
+func get_damaged(value: int) -> void:
+	if value >= current_hp:
+		set_current_hp(0)
+	else:
+		set_current_hp(current_hp - value)

@@ -23,6 +23,10 @@ BuildingManager="*res://Scripts/General/BuildingManager.gd"
 Player="*res://Scenes/player.tscn"
 ResourceManager="*res://Scripts/General/ResourceManager.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="CatsTowerDefence"

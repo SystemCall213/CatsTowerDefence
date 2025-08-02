@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://uuululr6h2ww"]
 
 [ext_resource type="Script" path="res://Scripts/MusicNotes/CryoNote.gd" id="1_vjpdp"]
-[ext_resource type="Texture2D" uid="uid://xavbbyuqxd40" path="res://Assets/CryoNote.png" id="2_54um1"]
+[ext_resource type="Texture2D" uid="uid://rqkdypttv5tn" path="res://Sprites/Notes/icenote.png" id="2_m3k0u"]
 [ext_resource type="Texture2D" uid="uid://dtsbtmdejtbc7" path="res://Assets/C_Water.png" id="2_w0sbc"]
 [ext_resource type="AudioStream" uid="uid://b74vb1sfp60of" path="res://Assets/Music/Notes/c.mp3" id="4_1n4qd"]
 [ext_resource type="AudioStream" uid="uid://vrtp2p6kgsxv" path="res://Assets/Music/Notes/e.mp3" id="5_rrjht"]
@@ -35,8 +35,9 @@ z_index = 2
 script = ExtResource("1_vjpdp")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_54um1")
+self_modulate = Color(0.713804, 0.632168, 0.989414, 1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_m3k0u")
 
 [node name="Area" type="Area2D" parent="."]
 collision_mask = 2
