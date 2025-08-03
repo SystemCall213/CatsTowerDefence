@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b12kk7mkabg8a"]
+[gd_scene load_steps=7 format=3 uid="uid://b12kk7mkabg8a"]
 
 [ext_resource type="Script" path="res://Scenes/ui.gd" id="1_h1sw8"]
 [ext_resource type="PackedScene" uid="uid://cxud6tpmocqjr" path="res://Scenes/timeline.tscn" id="1_sqpod"]
 [ext_resource type="PackedScene" uid="uid://b2hx6wmmew2v2" path="res://Scenes/BottomPanel.tscn" id="2_64bka"]
 [ext_resource type="PackedScene" uid="uid://cvft2d25n0y6o" path="res://Scenes/noteshelper.tscn" id="4_cqua6"]
+[ext_resource type="PackedScene" path="res://Scenes/waves_left.tscn" id="5_ka38w"]
+[ext_resource type="PackedScene" path="res://Scenes/EndGame.tscn" id="6_hm7bp"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -46,3 +48,13 @@ size_flags_horizontal = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" parent="CanvasLayer" instance=ExtResource("4_cqua6")]
+
+[node name="WavesLeft" parent="." instance=ExtResource("5_ka38w")]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 70.0
+offset_right = 134.0
+offset_bottom = 110.0
+
+[node name="Panel" parent="." instance=ExtResource("6_hm7bp")]
+layout_mode = 0
