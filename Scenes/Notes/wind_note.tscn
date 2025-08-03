@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjaih34n6e31j"]
+[gd_scene load_steps=9 format=3 uid="uid://cjaih34n6e31j"]
 
 [ext_resource type="Script" path="res://Scripts/MusicNotes/WindNote.gd" id="1_uhya7"]
 [ext_resource type="Texture2D" uid="uid://q5plointy1s0" path="res://Sprites/Notes/windnote.png" id="2_ohjkf"]
-[ext_resource type="AudioStream" uid="uid://btvq18vmqbxic" path="res://Assets/Music/Notes/d.mp3" id="4_sps8x"]
 [ext_resource type="AudioStream" uid="uid://dfnp46el2h28p" path="res://Assets/Music/Notes/f.mp3" id="5_w71th"]
 [ext_resource type="AudioStream" uid="uid://cd3lwhr8vslf7" path="res://Assets/Music/Notes/a.mp3" id="6_87hua"]
 
@@ -57,7 +56,7 @@ randomness = 1.0
 [node name="Players" type="Node2D" parent="."]
 
 [node name="NotePlayer1" type="AudioStreamPlayer2D" parent="Players"]
-stream = ExtResource("4_sps8x")
+stream = ExtResource("5_w71th")
 volume_db = -5.0
 
 [node name="NotePlayer2" type="AudioStreamPlayer2D" parent="Players"]

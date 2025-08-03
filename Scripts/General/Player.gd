@@ -36,18 +36,18 @@ func _process(_delta):
 			if Input.is_action_just_pressed(key):
 				var path = note_paths[key]
 				_play_note(path)
-
 				# Add key to cat combination
 				current_cat.combination.add_char(key)
-
-		if Input.is_action_just_pressed("SPACE"):
+		
+		if Input.is_action_just_pressed("SPACE") and current_cat.combination.combination.size() > 0:
 			current_cat.combination.execute()
 			cat_mode = false
 	else:
 		if is_instance_valid(current_dog_target):
 			enemy_pointer.show()
-			for key in CombinationsDictionary.Combinations.keys():
+			for key in note_paths.keys():
 				if Input.is_action_just_pressed(key):
+					var path = note_paths[key]
 					if ResourceManager.mana < note_cost:
 						return
 					ResourceManager.remove_mana(note_cost)
@@ -71,6 +71,7 @@ func _process(_delta):
 		current_dog_target = closest_dog
 		enemy_pointer.global_position = closest_dog.global_position
 
+#deprecated
 func _play_note(path: String):
 	var selected_player: AudioStreamPlayer2D = null
 

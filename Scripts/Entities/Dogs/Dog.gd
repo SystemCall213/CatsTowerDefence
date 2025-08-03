@@ -3,17 +3,19 @@ class_name Dog
 
 @export var waypoint_manager: WaypointManager = null
 @export var current_hp: int
-@export var max_hp: int = 10
+static var max_hp: int = 50
 @export var damage:= 1
 
 var waypoints: Array = []
 var current_index: int = 0
-var speed_orig: float = 50.0
+static var speed_orig: float = 50.0
 var speed: float = 50.0
 var turn_speed: float = 5.0
-
+var killed: bool = false
 var effects: Array[Effect] = []
 var elements: Array[Element] = []
+
+var money_reward = 3
 
 @onready var hp_bar: HPBar = $ProgressBar
 @onready var sprite: Sprite2D = $Sprite
@@ -30,6 +32,7 @@ func _ready():
 func set_current_hp(value: int) -> void:
 	current_hp = clamp(value, 0, max_hp)
 	if current_hp == 0:
+		ResourceManager.add_gold(money_reward)
 		die()
 	refresh_health()
 
@@ -67,5 +70,7 @@ func heal(value:int) -> void:
 	set_current_hp(value + current_hp)
 
 func die():
-	GameManager.enemies.erase(self)
-	queue_free()
+	if not killed:
+		killed = !killed
+		WaveManager.dog_killed.emit()
+		queue_free()

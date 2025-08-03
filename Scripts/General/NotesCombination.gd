@@ -13,7 +13,7 @@ func _ready():
 func add_char(_symbol: String):
 	symbol = _symbol
 
-	if combination.size() > 4:
+	if combination.size() > 2:
 		var instance = max_notes_label.instantiate()
 		cat.for_label.add_child(instance)
 		return

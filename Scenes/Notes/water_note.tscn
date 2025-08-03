@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/MusicNotes/WaterNote.gd" id="1_svnff"]
 [ext_resource type="Texture2D" uid="uid://do1v4g1lv1hf5" path="res://Sprites/Notes/waternote.png" id="2_2syo7"]
-[ext_resource type="AudioStream" uid="uid://btvq18vmqbxic" path="res://Assets/Music/Notes/d.mp3" id="3_s1tve"]
+[ext_resource type="AudioStream" uid="uid://b74vb1sfp60of" path="res://Assets/Music/Notes/c.mp3" id="3_2djel"]
 [ext_resource type="AudioStream" uid="uid://dfnp46el2h28p" path="res://Assets/Music/Notes/f.mp3" id="4_sn0sm"]
 [ext_resource type="AudioStream" uid="uid://cd3lwhr8vslf7" path="res://Assets/Music/Notes/a.mp3" id="5_1oshl"]
 
@@ -57,7 +57,7 @@ randomness = 1.0
 [node name="Players" type="Node2D" parent="."]
 
 [node name="NotePlayer1" type="AudioStreamPlayer2D" parent="Players"]
-stream = ExtResource("3_s1tve")
+stream = ExtResource("3_2djel")
 volume_db = -5.0
 
 [node name="NotePlayer2" type="AudioStreamPlayer2D" parent="Players"]

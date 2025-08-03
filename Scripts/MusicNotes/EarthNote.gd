@@ -2,7 +2,7 @@ extends Note
 
 func _ready():
 	super._ready()
-	speed = 400
+	speed = 100
 	spin_speed = 5.0
 	damage = 3
 	element = preload("res://Scenes/Elements/earth_element.tscn")

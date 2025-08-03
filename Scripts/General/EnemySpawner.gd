@@ -14,7 +14,7 @@ func start_wave(_idx: int) -> void:
 		var dog_scene = waves_scenes[_idx]
 		var dog_count = counts[_idx]
 		for i in range(dog_count):
-			var dog = dog_scene.instantiate()
+			var dog = dog_scene.instantiate() as Dog
 			dog.waypoint_manager = waypoint_manager
 			add_child(dog)
 			await get_tree().create_timer(spawn_interval).timeout

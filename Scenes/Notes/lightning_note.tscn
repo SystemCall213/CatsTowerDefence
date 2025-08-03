@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/MusicNotes/LightningNote.gd" id="1_y1g0x"]
 [ext_resource type="Texture2D" uid="uid://coukbh8v53u6o" path="res://Sprites/Notes/pikachunote.png" id="2_yp8o7"]
-[ext_resource type="AudioStream" uid="uid://b74vb1sfp60of" path="res://Assets/Music/Notes/c.mp3" id="4_lshw2"]
+[ext_resource type="AudioStream" uid="uid://dw5c1nysn51mv" path="res://Assets/Music/Notes/b.mp3" id="3_b4rjf"]
 [ext_resource type="AudioStream" uid="uid://vrtp2p6kgsxv" path="res://Assets/Music/Notes/e.mp3" id="5_cwje8"]
 [ext_resource type="AudioStream" uid="uid://dfnp46el2h28p" path="res://Assets/Music/Notes/f.mp3" id="6_hpe10"]
 
@@ -58,7 +58,7 @@ randomness = 1.0
 [node name="Players" type="Node2D" parent="."]
 
 [node name="NotePlayer1" type="AudioStreamPlayer2D" parent="Players"]
-stream = ExtResource("4_lshw2")
+stream = ExtResource("3_b4rjf")
 volume_db = -5.0
 
 [node name="NotePlayer2" type="AudioStreamPlayer2D" parent="Players"]

@@ -5,7 +5,7 @@ extends Node2D
 @onready var catScene = load("res://Scenes/Entities/Cats/Cat.tscn")
 var source_id : int
 var selected_tile : Vector2i
-var cat_price:int = 10
+var cat_price:int = 15
 var source_size = 2
  
 var select_mode : bool = false
@@ -67,13 +67,14 @@ func on_button_pressed(atlas_id: int, atlas_coords: Vector2i) -> void:
 	 
 
 func place_tile(tile_pos: Vector2i):
-	var placed_cat = catScene.instantiate()
+	var placed_cat = catScene.instantiate() as Cat
 	ResourceManager.remove_gold(cat_price)
 	var world_pos = ground.map_to_local(tile_pos)
 	placed_cat.position = world_pos  
 	Player.cat_mode = true
 	Player.current_cat = placed_cat
 	add_child(placed_cat)
+	placed_cat.range.hide()
 
 	ground.set_cell(tile_pos, source_id, selected_tile)
 	preview.erase_cell(tile_pos)

@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://ci0cc4x1swmeo"]
+[gd_scene load_steps=9 format=3 uid="uid://ci0cc4x1swmeo"]
 
 [ext_resource type="Script" path="res://Scripts/MusicNotes/EarthNote.gd" id="1_dvqji"]
 [ext_resource type="Texture2D" uid="uid://c0ogs2qvy8fte" path="res://Sprites/Notes/earthnote.png" id="2_vk2y5"]
-[ext_resource type="AudioStream" uid="uid://b74vb1sfp60of" path="res://Assets/Music/Notes/c.mp3" id="4_vktaa"]
 [ext_resource type="AudioStream" uid="uid://vrtp2p6kgsxv" path="res://Assets/Music/Notes/e.mp3" id="5_4pc5c"]
 [ext_resource type="AudioStream" uid="uid://dfnp46el2h28p" path="res://Assets/Music/Notes/f.mp3" id="6_u7xhm"]
 
@@ -57,7 +56,7 @@ randomness = 1.0
 [node name="Players" type="Node2D" parent="."]
 
 [node name="NotePlayer1" type="AudioStreamPlayer2D" parent="Players"]
-stream = ExtResource("4_vktaa")
+stream = ExtResource("5_4pc5c")
 volume_db = -5.0
 
 [node name="NotePlayer2" type="AudioStreamPlayer2D" parent="Players"]

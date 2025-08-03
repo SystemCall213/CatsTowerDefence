@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://o8bi7i4fgt6l"]
+
+[ext_resource type="Script" path="res://Scripts/General/WavesLeftCounter.gd" id="1_iawxw"]
+
+[node name="WavesLeft" type="RichTextLabel"]
+custom_minimum_size = Vector2(128, 0)
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 144.0
+offset_bottom = 88.0
+text = "Waves left:"
+scroll_active = false
+script = ExtResource("1_iawxw")

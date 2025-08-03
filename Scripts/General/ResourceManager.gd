@@ -12,8 +12,8 @@ signal on_gold_change(amount)
 signal on_mana_change(amount)
 signal on_max_mana_change(amount)
 
-func	 _ready():
-	hp = 100
+func _ready():
+	hp = 20
 	gold = 100
 	pass
 	
