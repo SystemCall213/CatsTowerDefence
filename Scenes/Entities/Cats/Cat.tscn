@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://Scripts/General/NotesCombination.gd" id="2_cx1dn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bwgay"]
+radius = 55.0265
 
 [node name="Cat" type="Node2D"]
 script = ExtResource("1_lnaah")
-attack_list = null
 
 [node name="AggressionArea" type="Area2D" parent="."]
 collision_mask = 2

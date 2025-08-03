@@ -6,3 +6,4 @@ func _ready():
 	spin_speed = 30.0
 	damage = 1
 	element = Elements.Type.B4_LIGHTNING
+	homing_strength = speed / 50
