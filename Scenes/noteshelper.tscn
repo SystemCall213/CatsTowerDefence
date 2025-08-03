@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvft2d25n0y6o"]
+
+[ext_resource type="Texture2D" uid="uid://c5prx3vqp3xpj" path="res://Sprites/Notes/all_notes.png" id="1_76458"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_left = 453.0
+offset_top = 27.0
+offset_right = 641.0
+offset_bottom = 65.0
+texture = ExtResource("1_76458")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 34.0
+offset_right = 100.0
+offset_bottom = 106.0
+grow_horizontal = 2
+text = "A     S   D   F     J    K      L
+SPACE - stop adding"

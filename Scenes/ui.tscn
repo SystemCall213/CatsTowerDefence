@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/ui.gd" id="1_h1sw8"]
 [ext_resource type="PackedScene" uid="uid://cxud6tpmocqjr" path="res://Scenes/timeline.tscn" id="1_sqpod"]
 [ext_resource type="PackedScene" uid="uid://b2hx6wmmew2v2" path="res://Scenes/BottomPanel.tscn" id="2_64bka"]
-[ext_resource type="Texture2D" uid="uid://c5prx3vqp3xpj" path="res://Sprites/Notes/all_notes.png" id="4_2y7xb"]
+[ext_resource type="PackedScene" uid="uid://cvft2d25n0y6o" path="res://Scenes/noteshelper.tscn" id="4_cqua6"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -45,23 +45,4 @@ layout_mode = 2
 size_flags_horizontal = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_left = 453.0
-offset_top = 27.0
-offset_right = 641.0
-offset_bottom = 65.0
-texture = ExtResource("4_2y7xb")
-expand_mode = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/TextureRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -90.0
-offset_top = 34.0
-offset_right = 100.0
-offset_bottom = 106.0
-grow_horizontal = 2
-text = "A     S   D   F     J    K      L
-SPACE - stop adding"
+[node name="TextureRect" parent="CanvasLayer" instance=ExtResource("4_cqua6")]
