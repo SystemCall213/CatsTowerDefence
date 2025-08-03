@@ -20,7 +20,8 @@ tile_map_data = PackedByteArray("AAAIAAAAAgAFAAEAAAAIAAEAAgAFAAEAAAAIAAIAAgAEAAE
 tile_set = ExtResource("1_j1lj6")
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(576, 324)
+position = Vector2(568, 319)
+zoom = Vector2(1.015, 1.015)
 
 [node name="EnemiesSpawners" type="Node2D" parent="."]
 
@@ -123,7 +124,7 @@ position = Vector2(128, -704)
 position = Vector2(416, 672)
 waypoint_manager = NodePath("../WaypointManager")
 waves_scenes = Array[PackedScene]([ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj")])
-counts = Array[int]([0, 10, 15, 25, 30, 40, 50])
+counts = Array[int]([5, 10, 15, 25, 30, 40, 50])
 
 [node name="WaveInfo" parent="EnemiesSpawners/Wave2" node_paths=PackedStringArray("spawners") instance=ExtResource("7_prmsd")]
 offset_left = 328.0

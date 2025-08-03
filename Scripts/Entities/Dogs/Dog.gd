@@ -72,5 +72,6 @@ func heal(value:int) -> void:
 func die():
 	if not killed:
 		killed = !killed
+		GameManager.enemies.erase(self)
 		WaveManager.dog_killed.emit()
 		queue_free()

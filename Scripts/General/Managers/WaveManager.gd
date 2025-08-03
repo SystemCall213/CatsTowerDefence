@@ -28,11 +28,12 @@ func start_wave():
 		spawner.start_wave(current_wave_idx)
 
 func _process(delta):
-	if wave_in_process and GameManager.enemies.size() == total_enemies_in_current_wave:
+	if wave_in_process and GameManager.enemies.size() == 0:
 		total_enemies_in_current_wave = 0
 		GameManager.enemies.clear()
 		wave_in_process = false
 		current_wave_idx += 1
+		ResourceManager.add_gold(45)
 		Dog.max_hp += 75
 		Dog.speed_orig += 13
 		wave_ended.emit()
