@@ -2,7 +2,7 @@ extends Control
 
 @onready var cat_placement = $CatPlacement
 var tilemap_size :int = 3
-var selected_cat :Vector2i
+var selected_cat :int
 @onready var gold_label = $GoldLabel
 @onready var hp_label = $HpLabel
 @onready var progress_bar = $ProgressBar
@@ -15,20 +15,20 @@ func _ready():
 
 
 func _on_button_button_down():
-	BuildingScene.on_button_pressed(selected_cat)
+	BuildingScene.on_button_pressed(selected_cat, Vector2i(0,0))
 	generate_new_cat()
 	
 	
 func generate_new_cat():
 	#generate new number for vector for cat
 	var rand_nmb = 0
-	if tilemap_size > 0:
-		rand_nmb = randi_range(0, tilemap_size - 1)
+	if BuildingScene.source_size > 0:
+		rand_nmb = randi_range(0, BuildingScene.source_size - 1)
 	#get new cat
-	var vec = Vector2i(rand_nmb, 0)
+
 	
-	var cat_sprite = BuildingScene.get_sprite_from_atlas(0, vec)
-	selected_cat = vec
+	var cat_sprite = BuildingScene.get_sprite_from_atlas(rand_nmb)
+	selected_cat = rand_nmb
 	#set sprite in the button
 
 	if cat_sprite:

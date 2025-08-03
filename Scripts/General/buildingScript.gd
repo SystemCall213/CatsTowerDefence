@@ -6,6 +6,7 @@ extends Node2D
 var source_id : int
 var selected_tile : Vector2i
 var cat_price:int = 10
+var source_size = 2
  
 var select_mode : bool = false
 var preview_tile : Vector2i:
@@ -57,13 +58,14 @@ func _input(event):
 			ground.erase_cell(preview_tile)
  
  
-func on_button_pressed(next_cat_id:Vector2i)->void:
+func on_button_pressed(atlas_id: int, atlas_coords: Vector2i) -> void:
 	if ResourceManager.gold >= cat_price:
-		print("clicked")
-		select_mode = true
-		selected_tile = next_cat_id
-		pass
+	# zapamiętujemy, skąd brać klatki
+		source_id    = atlas_id
+		selected_tile = atlas_coords
+		select_mode   = true
 	 
+
 func place_tile(tile_pos: Vector2i):
 	var placed_cat = catScene.instantiate()
 	ResourceManager.remove_gold(cat_price)
@@ -72,19 +74,18 @@ func place_tile(tile_pos: Vector2i):
 	Player.cat_mode = true
 	Player.current_cat = placed_cat
 	add_child(placed_cat)
-	
+
 	ground.set_cell(tile_pos, source_id, selected_tile)
 	preview.erase_cell(tile_pos)
 	BuildingManager.get_tiles(ground, selected_tile, preview_tile)
  
-func get_sprite_from_atlas(source_id: int, atlas_coords: Vector2i) -> Sprite2D:
-	var source = ground.tile_set.get_source(source_id)
-	print(source)
+func get_sprite_from_atlas(source_id: int) -> Sprite2D:
 	print(source_id)
-	print(atlas_coords)
+	var source = ground.tile_set.get_source(source_id)
+
 	if source is TileSetAtlasSource:
 		var texture = source.get_texture()
-		var region = source.get_tile_texture_region(atlas_coords)
+		var region = source.get_tile_texture_region(Vector2i(0,0))
 
 		var sprite := Sprite2D.new()
 		sprite.texture = texture

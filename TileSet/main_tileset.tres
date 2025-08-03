@@ -1,33 +1,29 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://bao1t0pq8iv6j"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bao1t0pq8iv6j"]
 
 [ext_resource type="Texture2D" uid="uid://dxcq5nhfki5t" path="res://TileSet/resources/catssheet-0.png" id="1_5mjl6"]
 [ext_resource type="Texture2D" uid="uid://du4ha83h5tvd0" path="res://TileSet/resources/catssheet-1.png" id="2_8ekfd"]
-[ext_resource type="Texture2D" uid="uid://boxs2llkg8wvi" path="res://TileSet/resources/backgroudn.png" id="3_887mw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tia0y"]
 texture = ExtResource("1_5mjl6")
 texture_region_size = Vector2i(512, 512)
+0:0/animation_columns = 3
+0:0/animation_mode = 1
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 2.0
 0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epm43"]
 texture = ExtResource("2_8ekfd")
 texture_region_size = Vector2i(512, 512)
+0:0/animation_columns = 3
+0:0/animation_mode = 1
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 2.0
 0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y28wk"]
-texture = ExtResource("3_887mw")
-texture_region_size = Vector2i(512, 512)
-5:1/0 = 0
-5:0/0 = 0
-4:0/0 = 0
-4:1/0 = 0
 
 [resource]
 tile_size = Vector2i(512, 512)
 sources/0 = SubResource("TileSetAtlasSource_tia0y")
 sources/1 = SubResource("TileSetAtlasSource_epm43")
-sources/2 = SubResource("TileSetAtlasSource_y28wk")

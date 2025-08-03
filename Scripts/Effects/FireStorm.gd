@@ -1,4 +1,4 @@
-extends Node
+extends Effect
 
 
 var slow_multiplier: float = 0.25
