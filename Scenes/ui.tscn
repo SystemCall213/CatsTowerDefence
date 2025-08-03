@@ -61,6 +61,7 @@ anchor_right = 0.5
 offset_left = -90.0
 offset_top = 34.0
 offset_right = 100.0
-offset_bottom = 61.0
+offset_bottom = 106.0
 grow_horizontal = 2
-text = "A     S   D   F     J    K      L"
+text = "A     S   D   F     J    K      L
+SPACE - stop adding"
