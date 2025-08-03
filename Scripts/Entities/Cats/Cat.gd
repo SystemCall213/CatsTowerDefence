@@ -2,7 +2,7 @@ extends Node2D
 class_name Cat
 
 @onready var aggression_area: Area2D = $AggressionArea
-@onready var combination: NotesCombination = $TextureRect/Combination
+@onready var combination: NotesCombination = $Combination
 @onready var for_label: Control = $ForMaxLabel
 @onready var texture_rect = $TextureRect
 

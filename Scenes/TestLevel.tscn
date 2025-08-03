@@ -30,7 +30,6 @@ position = Vector2(990.835, 160.585)
 
 [node name="WaypointManager" parent="." instance=ExtResource("4_kqchx")]
 position = Vector2(-30.565, 352.7)
-waypoints = Array[NodePath]([NodePath("Waypoint"), NodePath("Waypoint3"), NodePath("Waypoint2")])
 
 [node name="Waypoint" parent="WaypointManager" instance=ExtResource("5_pv4pb")]
 position = Vector2(313.24, 0)

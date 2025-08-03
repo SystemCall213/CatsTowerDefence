@@ -34,7 +34,6 @@ func _process(_delta):
 		for key in note_paths.keys():
 			if Input.is_action_just_pressed(key):
 				var path = note_paths[key]
-				_play_note(path)
 
 				# Add key to cat combination
 				current_cat.combination.add_char(key)
@@ -45,8 +44,9 @@ func _process(_delta):
 	else:
 		if is_instance_valid(current_dog_target):
 			enemy_pointer.show()
-			for key in CombinationsDictionary.Combinations.keys():
+			for key in note_paths.keys():
 				if Input.is_action_just_pressed(key):
+					var path = note_paths[key]
 					var note_scene: PackedScene = CombinationsDictionary.Combinations[key]
 					if note_scene:
 						var note = note_scene.instantiate() as Note
@@ -66,6 +66,7 @@ func _process(_delta):
 		current_dog_target = closest_dog
 		enemy_pointer.global_position = closest_dog.global_position
 
+#deprecated
 func _play_note(path: String):
 	var selected_player: AudioStreamPlayer2D = null
 

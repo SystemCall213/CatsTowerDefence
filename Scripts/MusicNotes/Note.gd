@@ -5,8 +5,6 @@ class_name Note
 @onready var area: Area2D = $Area
 @onready var sprite: Sprite2D = $Sprite
 @onready var note_player1 = $Players/NotePlayer1
-@onready var note_player2 = $Players/NotePlayer2
-@onready var note_player3 = $Players/NotePlayer3
 
 var element: PackedScene
 var element_time: float = 3.5
@@ -40,11 +38,7 @@ func _ready():
 	var angle_rad := deg_to_rad(randf_range(180 - max_angle_deg, 180 + max_angle_deg))
 	velocity_direction = direction.rotated(angle_rad)
 
-
-	var note_players = [note_player1, note_player2, note_player3]
-	for player in note_players:
-		await get_tree().create_timer(play_interval).timeout
-		player.play()
+	note_player1.play()
 	
 	if not finderStrategy:
 		finderStrategy = DontFindStrategy.new()
