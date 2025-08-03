@@ -6,6 +6,7 @@ var cat: Cat
 var combination: Array[PackedScene] = []
 var max_notes_label: PackedScene = preload("res://Scenes/max_notes_label.tscn")
 
+
 func _ready():
 	cat = get_parent()
 
@@ -16,7 +17,7 @@ func add_char(_symbol: String):
 		var instance = max_notes_label.instantiate()
 		cat.for_label.add_child(instance)
 		return
-
+	
 	if CombinationsDictionary.Combinations.has(symbol):
 		var note_scene = CombinationsDictionary.Combinations[symbol]
 		if note_scene is PackedScene:

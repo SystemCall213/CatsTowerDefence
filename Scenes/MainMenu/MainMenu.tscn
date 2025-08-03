@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://m0xehxoqo22u"]
+[gd_scene load_steps=13 format=3 uid="uid://m0xehxoqo22u"]
 
 [ext_resource type="Texture2D" uid="uid://dxcq5nhfki5t" path="res://TileSet/resources/catssheet-0.png" id="1_2ga2j"]
 [ext_resource type="Texture2D" uid="uid://dwpo5vbivoaea" path="res://Sprites/TITLE.png" id="1_a8k4s"]
+[ext_resource type="Texture2D" uid="uid://bt4sw47sqponb" path="res://Sprites/BUTTON 3.png" id="2_3liwd"]
 [ext_resource type="Texture2D" uid="uid://du4ha83h5tvd0" path="res://TileSet/resources/catssheet-1.png" id="2_4ocgf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_glr5m"]
@@ -95,22 +96,61 @@ expand_mode = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 53.0
-offset_top = 368.0
+offset_top = 333.0
 offset_right = 398.0
-offset_bottom = 648.0
+offset_bottom = 613.0
 theme_override_constants/separation = 18
 
-[node name="Play" type="Button" parent="VBoxContainer"]
+[node name="Play" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-text = "Play"
+texture_normal = ExtResource("2_3liwd")
 
-[node name="Howtoplay" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "How to play"
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Play"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "[center]Play"
 
-[node name="Credits" type="Button" parent="VBoxContainer"]
+[node name="Howtoplay" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-text = "Credits"
+texture_normal = ExtResource("2_3liwd")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Howtoplay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "[center]How to play"
+
+[node name="Credits" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_3liwd")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "[center]Credits"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(963, 437)
@@ -120,7 +160,8 @@ autoplay = "default"
 frame = 2
 frame_progress = 0.45009
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D2"]
-position = Vector2(-327.623, 17.0194)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(732, 449)
+scale = Vector2(0.705078, 0.705078)
 sprite_frames = SubResource("SpriteFrames_sxmll")
 autoplay = "default"
