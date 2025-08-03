@@ -1,12 +1,20 @@
+<<<<<<< HEAD
 [gd_scene load_steps=8 format=3 uid="uid://b12kk7mkabg8a"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://b12kk7mkabg8a"]
+>>>>>>> mati3
 
 [ext_resource type="Script" path="res://Scenes/ui.gd" id="1_h1sw8"]
 [ext_resource type="PackedScene" uid="uid://cxud6tpmocqjr" path="res://Scenes/timeline.tscn" id="1_sqpod"]
 [ext_resource type="PackedScene" uid="uid://b2hx6wmmew2v2" path="res://Scenes/BottomPanel.tscn" id="2_64bka"]
+<<<<<<< HEAD
 [ext_resource type="Script" path="res://Scripts/General/WavesLeftCounter.gd" id="2_755jt"]
 [ext_resource type="Script" path="res://Scripts/General/WinCondition.gd" id="5_r0o06"]
 [ext_resource type="Script" path="res://Scripts/General/DogsKilledCounter.gd" id="6_i4tl3"]
 [ext_resource type="Script" path="res://Scripts/General/Buttons/Quit.gd" id="6_ti3se"]
+=======
+[ext_resource type="Texture2D" uid="uid://c5prx3vqp3xpj" path="res://Sprites/Notes/all_notes.png" id="4_2y7xb"]
+>>>>>>> mati3
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -58,6 +66,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 metadata/_edit_use_anchors_ = true
 
+<<<<<<< HEAD
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 visible = false
 offset_right = 1152.0
@@ -95,3 +104,25 @@ script = ExtResource("6_i4tl3")
 layout_mode = 2
 text = "QUIT"
 script = ExtResource("6_ti3se")
+=======
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 453.0
+offset_top = 27.0
+offset_right = 641.0
+offset_bottom = 65.0
+texture = ExtResource("4_2y7xb")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 34.0
+offset_right = 100.0
+offset_bottom = 106.0
+grow_horizontal = 2
+text = "A     S   D   F     J    K      L
+SPACE - stop adding"
+>>>>>>> mati3
