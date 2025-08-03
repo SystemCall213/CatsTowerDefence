@@ -15,7 +15,7 @@ func execute():
 	make_it_burn()
 
 func reverse():
-	dog.get_node("Sprite").modulate = dog.origin_modulate
+	dog.self_modulate = Color8(255,255,255)
 
 func make_it_burn():
 	var burn_duration := 4.0
@@ -30,7 +30,7 @@ func make_it_burn():
 		# Flash red
 		if is_instance_valid(dog):
 			var sprite = dog.get_node("Sprite")
-			sprite.modulate = Color(255, 0, 0)  # red
+			sprite.modulate = Color8(255, 0, 0)  # red
 			await get_tree().create_timer(flash_duration).timeout
 			if is_instance_valid(dog):
 				sprite.modulate = dog.origin_modulate

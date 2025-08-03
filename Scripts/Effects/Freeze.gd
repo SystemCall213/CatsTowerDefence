@@ -13,8 +13,8 @@ func init(_dog: Dog):
 
 func execute():
 	dog.speed *= slow_multiplier
-	dog.get_node("Sprite").modulate = Color(0, 255, 255)
+	dog.self_modulate = Color8(0,255,255)
 
 func reverse():
 	dog.speed = dog_speed
-	dog.get_node("Sprite").modulate = dog.origin_modulate
+	dog.self_modulate = Color8(255,255,255)

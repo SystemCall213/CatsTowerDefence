@@ -54,3 +54,7 @@ func remove_hp(amount):
 		hp -= amount
 		on_hp_change.emit(hp)
 	pass
+func remove_mana(amount:int)->void:
+	if amount > 0:
+		mana -= amount
+		on_mana_change.emit(mana)

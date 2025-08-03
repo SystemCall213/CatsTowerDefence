@@ -3,6 +3,7 @@ extends Node2D
 var cat_mode = false
 var current_cat: Cat
 var current_dog_target: Dog
+var note_cost:int = 10
 
 @onready var note_player1 = $NotePlayer1
 @onready var note_player2 = $NotePlayer2
@@ -47,6 +48,10 @@ func _process(_delta):
 			for key in note_paths.keys():
 				if Input.is_action_just_pressed(key):
 					var path = note_paths[key]
+					if ResourceManager.mana < note_cost:
+						return
+					ResourceManager.remove_mana(note_cost)
+					
 					var note_scene: PackedScene = CombinationsDictionary.Combinations[key]
 					if note_scene:
 						var note = note_scene.instantiate() as Note
