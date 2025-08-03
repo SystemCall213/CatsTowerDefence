@@ -41,25 +41,30 @@ func _physics_process(delta):
 		return
 
 	var target_pos = waypoints[current_index].global_position
-	var direction = (target_pos - global_position).normalized()
-	var distance = global_position.distance_to(target_pos)
+	var dir        = (target_pos - global_position).normalized()
+	var dist       = global_position.distance_to(target_pos)
 
-	if distance > 5.0:
-		var target_angle = direction.angle()
-		rotation = lerp_angle(rotation, target_angle, turn_speed * delta)
-		
-		velocity = direction * speed
+	if dist > 5.0:
+		velocity = dir * speed
 		move_and_slide()
+		sprite.flip_h = dir.x < 0
+
 	else:
 		current_index += 1
 		if current_index >= waypoints.size():
 			die()
 
 func get_damaged(value: int) -> void:
+	if value < 0:
+		return
 	if value >= current_hp:
 		set_current_hp(0)
 	else:
 		set_current_hp(current_hp - value)
+func heal(value:int) -> void:
+	if value < 0:
+		return
+	set_current_hp(value + current_hp)
 
 func die():
 	GameManager.enemies.erase(self)
