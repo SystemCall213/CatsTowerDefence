@@ -13,6 +13,7 @@ func init(_dog: Dog):
 func _process(delta):
 	time_to_live -= delta
 	if time_to_live <= 0:
+		dog.elements.erase(self)
 		queue_free()
 
 func check_exists():

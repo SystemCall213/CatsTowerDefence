@@ -8,7 +8,7 @@ class_name Note
 @onready var note_player2 = $Players/NotePlayer2
 @onready var note_player3 = $Players/NotePlayer3
 
-var element: Elements.Type
+var element: PackedScene
 var element_time: float = 3.5
 var target: Dog
 var play_interval: float = 0.1

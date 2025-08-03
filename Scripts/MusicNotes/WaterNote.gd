@@ -2,8 +2,8 @@ extends Note
 
 func _ready():
 	super._ready()
-	speed = 100
+	speed = 250
 	spin_speed = 10.0
 	damage = 1
-	element = Elements.Type.C4_WATER
+	element = preload("res://Scenes/Elements/water_element.tscn")
 	homing_strength = speed / 50

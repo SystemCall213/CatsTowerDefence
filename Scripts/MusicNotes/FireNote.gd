@@ -5,5 +5,5 @@ func _ready():
 	speed = 400
 	spin_speed = 20.0
 	damage = 3
-	element = Elements.Type.D4_FIRE
+	element = preload("res://Scenes/Elements/fire_element.tscn")
 	homing_strength = speed / 100
