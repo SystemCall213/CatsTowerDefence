@@ -19,7 +19,7 @@ func _ready():
 	CurrentTime.connect("looped", Callable(self, "_on_looped"))
 
 func _process(_delta):
-	if (current_target):
+	if (!current_target):
 		_update_target()
 
 func _on_looped():
