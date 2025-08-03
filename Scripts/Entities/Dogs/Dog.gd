@@ -3,12 +3,12 @@ class_name Dog
 
 @export var waypoint_manager: WaypointManager = null
 @export var current_hp: int
-@export var max_hp: int = 50
+static var max_hp: int = 50
 @export var damage:= 1
 
 var waypoints: Array = []
 var current_index: int = 0
-var speed_orig: float = 50.0
+static var speed_orig: float = 50.0
 var speed: float = 50.0
 var turn_speed: float = 5.0
 var killed: bool = false
@@ -73,5 +73,4 @@ func die():
 	if not killed:
 		killed = !killed
 		WaveManager.dog_killed.emit()
-		GameManager.enemies.erase(self)
 		queue_free()

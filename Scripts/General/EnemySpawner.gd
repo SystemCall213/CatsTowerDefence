@@ -16,7 +16,5 @@ func start_wave(_idx: int) -> void:
 		for i in range(dog_count):
 			var dog = dog_scene.instantiate() as Dog
 			dog.waypoint_manager = waypoint_manager
-			dog.max_hp = 100 + WaveManager.current_wave_idx * WaveManager.wave_max_hp_additor
-			dog.speed = 50 + WaveManager.current_wave_idx * WaveManager.speed_additor
 			add_child(dog)
 			await get_tree().create_timer(spawn_interval).timeout

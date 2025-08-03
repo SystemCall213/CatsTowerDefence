@@ -12,6 +12,7 @@ script = ExtResource("1_vitol")
 [node name="DogSprite" type="TextureRect" parent="."]
 layout_mode = 2
 texture = ExtResource("2_336m3")
+expand_mode = 2
 
 [node name="StatsContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(64, 64)
