@@ -6,3 +6,4 @@ func _ready():
 	spin_speed = 3.0
 	damage = 1
 	element = Elements.Type.A4_OIL
+	homing_strength = speed / 50

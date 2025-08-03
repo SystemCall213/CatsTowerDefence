@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1o6pycijsv65"]
+[gd_scene load_steps=10 format=3 uid="uid://b1o6pycijsv65"]
 
 [ext_resource type="Script" path="res://Scripts/MusicNotes/FireNote.gd" id="1_hqr0l"]
 [ext_resource type="Texture2D" uid="uid://bmqafs58kk300" path="res://Sprites/Notes/firenote.png" id="2_26ijv"]
-[ext_resource type="Texture2D" uid="uid://dtsbtmdejtbc7" path="res://Assets/C_Water.png" id="3_p12l8"]
 [ext_resource type="AudioStream" uid="uid://b74vb1sfp60of" path="res://Assets/Music/Notes/c.mp3" id="4_mnjut"]
 [ext_resource type="AudioStream" uid="uid://vrtp2p6kgsxv" path="res://Assets/Music/Notes/e.mp3" id="5_wbyj2"]
 [ext_resource type="AudioStream" uid="uid://dfnp46el2h28p" path="res://Assets/Music/Notes/f.mp3" id="6_flqnc"]
@@ -21,21 +20,18 @@ particle_flag_disable_z = true
 angle_min = -180.0
 angle_max = 180.0
 spread = 180.0
-initial_velocity_min = 100.0
-initial_velocity_max = 100.0
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
 angular_velocity_min = 100.0
 angular_velocity_max = 300.0
 gravity = Vector3(0, 0, 0)
-scale_min = 0.5
-scale_max = 0.5
+scale_min = 0.03
+scale_max = 0.03
 scale_curve = SubResource("CurveTexture_chm5j")
 
 [node name="FireNote" type="Node2D"]
 z_index = 2
 script = ExtResource("1_hqr0l")
-speed = null
-spin_speed = null
-damage = null
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.03, 0.03)
@@ -49,11 +45,11 @@ shape = SubResource("CircleShape2D_8hcql")
 
 [node name="Particles" type="GPUParticles2D" parent="."]
 z_index = 2
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.03, 0.03)
 emitting = false
-amount = 25
+amount = 50
 process_material = SubResource("ParticleProcessMaterial_j6wgt")
-texture = ExtResource("3_p12l8")
+texture = ExtResource("2_26ijv")
 one_shot = true
 explosiveness = 0.4
 randomness = 1.0

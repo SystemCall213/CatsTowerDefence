@@ -32,9 +32,6 @@ scale_curve = SubResource("CurveTexture_chm5j")
 [node name="Note" type="Node2D"]
 z_index = 2
 script = ExtResource("1_ii4ab")
-speed = null
-spin_speed = null
-damage = null
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -48,7 +45,7 @@ shape = SubResource("CircleShape2D_8hcql")
 
 [node name="Particles" type="GPUParticles2D" parent="."]
 z_index = 2
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.03, 0.03)
 emitting = false
 amount = 25
 process_material = SubResource("ParticleProcessMaterial_j6wgt")

@@ -6,3 +6,4 @@ func _ready():
 	spin_speed = 5.0
 	damage = 3
 	element = Elements.Type.F4_WIND
+	homing_strength = speed / 100

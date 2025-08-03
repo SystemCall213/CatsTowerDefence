@@ -3,6 +3,7 @@ class_name Cat
 
 @onready var aggression_area: Area2D = $AggressionArea
 @onready var combination: NotesCombination = $Combination
+@onready var for_label: Control = $ForMaxLabel
 
 @export var attack_list: Array[PackedScene]
 @export var attack_interval: float = 0.3  # Interval between notes in a burst

@@ -6,3 +6,4 @@ func _ready():
 	spin_speed = 10.0
 	damage = 3
 	element = Elements.Type.G4_CRYO
+	homing_strength = speed / 100

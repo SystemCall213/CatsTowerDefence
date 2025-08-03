@@ -5,14 +5,17 @@
 [ext_resource type="Script" path="res://Scripts/General/HPBar.gd" id="2_ii57s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6yrw"]
-size = Vector2(16, 16)
+size = Vector2(63.2095, 63.3185)
 
 [node name="Dog" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_qits1")
+max_hp = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.38419e-07, -2.38419e-07)
+scale = Vector2(1.01251, 1.01076)
 shape = SubResource("RectangleShape2D_j6yrw")
 
 [node name="Sprite" type="Sprite2D" parent="."]

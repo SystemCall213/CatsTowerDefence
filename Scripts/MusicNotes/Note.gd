@@ -1,6 +1,7 @@
 extends Node2D
 class_name Note
 
+@onready var particles: GPUParticles2D = $Particles
 @onready var area: Area2D = $Area
 @onready var sprite: Sprite2D = $Sprite
 @onready var note_player1 = $Players/NotePlayer1
@@ -47,6 +48,9 @@ func _ready():
 	
 	if not finderStrategy:
 		finderStrategy = DontFindStrategy.new()
+	
+	particles.texture = sprite.texture
+	particles.scale = Vector2(0.03, 0.03)
 
 func _physics_process(delta):
 	if is_instance_valid(target):
@@ -58,6 +62,7 @@ func _physics_process(delta):
 		if new_target:
 			target = new_target
 		else:
+			speed = 0
 			_explode()
 
 	position += velocity_direction.normalized() * speed * delta
@@ -66,6 +71,7 @@ func _physics_process(delta):
 
 func _on_area_entered(dog: Dog) -> void:
 	if dog == target:
+		speed = 0
 		dog.set_current_hp(dog.current_hp - damage)
 		apply_element()
 		_explode()
