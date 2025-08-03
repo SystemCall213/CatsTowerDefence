@@ -34,6 +34,6 @@ func _process(delta):
 		wave_in_process = false
 		current_wave_idx += 1
 		ResourceManager.add_gold(45)
-		Dog.max_hp += 75
+		Dog.max_hp += 50
 		Dog.speed_orig += 13
 		wave_ended.emit()

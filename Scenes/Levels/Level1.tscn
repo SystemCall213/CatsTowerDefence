@@ -72,8 +72,8 @@ position = Vector2(384, -704)
 [node name="EnemySpawner" parent="EnemiesSpawners/Wave1" node_paths=PackedStringArray("waypoint_manager") instance=ExtResource("5_5t1uv")]
 position = Vector2(160, 672)
 waypoint_manager = NodePath("../WaypointManager")
-waves_scenes = Array[PackedScene]([ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj")])
-counts = Array[int]([10, 15, 20, 30, 35, 50])
+waves_scenes = Array[PackedScene]([ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj")])
+counts = Array[int]([10, 15, 20, 30])
 
 [node name="WaveInfo" parent="EnemiesSpawners/Wave1" node_paths=PackedStringArray("spawners") instance=ExtResource("7_prmsd")]
 offset_left = 72.0
@@ -123,8 +123,8 @@ position = Vector2(128, -704)
 [node name="EnemySpawner" parent="EnemiesSpawners/Wave2" node_paths=PackedStringArray("waypoint_manager") instance=ExtResource("5_5t1uv")]
 position = Vector2(416, 672)
 waypoint_manager = NodePath("../WaypointManager")
-waves_scenes = Array[PackedScene]([ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj")])
-counts = Array[int]([5, 10, 15, 25, 30, 40, 50])
+waves_scenes = Array[PackedScene]([ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj")])
+counts = Array[int]([5, 10, 15, 25])
 
 [node name="WaveInfo" parent="EnemiesSpawners/Wave2" node_paths=PackedStringArray("spawners") instance=ExtResource("7_prmsd")]
 offset_left = 328.0
@@ -165,8 +165,8 @@ position = Vector2(-640, -264)
 [node name="EnemySpawner" parent="EnemiesSpawners/Wave3" node_paths=PackedStringArray("waypoint_manager") instance=ExtResource("5_5t1uv")]
 position = Vector2(1189, 224)
 waypoint_manager = NodePath("../WaypointManager")
-waves_scenes = Array[PackedScene]([ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj")])
-counts = Array[int]([0, 0, 0, 0, 15, 20, 50])
+waves_scenes = Array[PackedScene]([ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj"), ExtResource("6_pbgjj")])
+counts = Array[int]([0, 0, 10, 20])
 
 [node name="WaveInfo" parent="EnemiesSpawners/Wave3" node_paths=PackedStringArray("spawners") instance=ExtResource("7_prmsd")]
 offset_left = 1088.0

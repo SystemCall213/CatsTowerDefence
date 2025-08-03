@@ -17,5 +17,5 @@ func game_over():
 func _on_body_entered(body):
 	if body is Dog:
 		take_damage(body.damage)  # <- Gate traci HP
-		body.queue_free()  # Wróg znika po dotarciu
+		body.die() # Wróg znika po dotarciu
 		
