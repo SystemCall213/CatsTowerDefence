@@ -5,5 +5,5 @@ func _ready():
 	speed = 400
 	spin_speed = 10.0
 	damage = 3
-	element = Elements.Type.G4_CRYO
+	element = preload("res://Scenes/Elements/cryo_element.tscn")
 	homing_strength = speed / 100

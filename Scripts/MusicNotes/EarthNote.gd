@@ -5,5 +5,5 @@ func _ready():
 	speed = 400
 	spin_speed = 5.0
 	damage = 3
-	element = Elements.Type.E4_EARTH
+	element = preload("res://Scenes/Elements/earth_element.tscn")
 	homing_strength = speed / 100

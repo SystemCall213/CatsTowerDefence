@@ -17,6 +17,7 @@ var elements: Array[Element] = []
 
 @onready var hp_bar: HPBar = $ProgressBar
 @onready var sprite: Sprite2D = $Sprite
+var origin_modulate
 
 func _ready():
 	if waypoint_manager:
@@ -24,6 +25,7 @@ func _ready():
 		current_hp = max_hp
 		refresh_health()
 	GameManager.enemies.append(self)
+	origin_modulate = sprite.modulate
 
 func set_current_hp(value: int) -> void:
 	current_hp = clamp(value, 0, max_hp)
@@ -52,12 +54,6 @@ func _physics_process(delta):
 		current_index += 1
 		if current_index >= waypoints.size():
 			die()
-
-func _process(delta):
-	for element in elements:
-		if element.update(delta):
-			print("Element expired: ", element.type)
-			elements.erase(element)
 
 func get_damaged(value: int) -> void:
 	if value >= current_hp:
