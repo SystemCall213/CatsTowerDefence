@@ -7,6 +7,7 @@
 
 [node name="Cat" type="Node2D"]
 script = ExtResource("1_lnaah")
+attack_list = null
 
 [node name="AggressionArea" type="Area2D" parent="."]
 collision_mask = 2
@@ -31,3 +32,10 @@ grow_vertical = 2
 scale = Vector2(0.125, 0.125)
 alignment = 1
 script = ExtResource("2_cx1dn")
+
+[node name="ForMaxLabel" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(1280, 250)
+offset_left = -536.0
+offset_top = -216.0
+offset_right = 744.0
+offset_bottom = 40.0

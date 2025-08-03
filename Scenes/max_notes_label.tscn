@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbct3j5245ekd"]
+
+[ext_resource type="Script" path="res://Scripts/General/max_notes_label.gd" id="1_78j3e"]
+
+[node name="MaxNotes" type="RichTextLabel"]
+z_index = 15
+offset_right = 1280.0
+offset_bottom = 274.0
+theme_override_font_sizes/normal_font_size = 100
+text = "5 notes per cat is max
+"
+fit_content = true
+script = ExtResource("1_78j3e")
