@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://brub3k57yxihg"]
+
+[ext_resource type="Script" path="res://Scripts/General/WaveInfo/CurrentWaveSpawnerInfo.gd" id="1_vitol"]
+[ext_resource type="Texture2D" uid="uid://civbmvv8tnug0" path="res://Assets/Dogs/Dog1.png" id="2_336m3"]
+
+[node name="CurrentWaveSpawnerInfo" type="HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 69.0
+offset_bottom = 64.0
+script = ExtResource("1_vitol")
+
+[node name="DogSprite" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_336m3")
+
+[node name="StatsContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HP" type="RichTextLabel" parent="StatsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 10
+text = "hp dwdwd"
+scroll_active = false
+
+[node name="Speed" type="RichTextLabel" parent="StatsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 10
+text = "hp dwdwd"
+scroll_active = false
+
+[node name="Damage" type="RichTextLabel" parent="StatsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 10
+text = "hp dwdwd"
+scroll_active = false
+
+[node name="Count" type="RichTextLabel" parent="StatsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "dfsdfsdf"
+scroll_active = false

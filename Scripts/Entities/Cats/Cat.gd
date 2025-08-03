@@ -72,6 +72,7 @@ func _fire_note(note_scene: PackedScene):
 
 	var note = note_scene.instantiate() as Note
 	note.set_target(current_target)
+	note.set_finder_strategy(DontFindStrategy.new())
 
 	note.global_position = global_position
 
