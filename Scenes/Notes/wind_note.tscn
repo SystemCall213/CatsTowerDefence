@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://ci0cc4x1swmeo"]
+[gd_scene load_steps=11 format=3 uid="uid://cjaih34n6e31j"]
 
-[ext_resource type="Script" path="res://Scripts/MusicNotes/EarthNote.gd" id="1_dvqji"]
-[ext_resource type="Texture2D" uid="uid://c0ogs2qvy8fte" path="res://Sprites/Notes/earthnote.png" id="2_vk2y5"]
-[ext_resource type="Texture2D" uid="uid://dtsbtmdejtbc7" path="res://Assets/C_Water.png" id="3_5knch"]
-[ext_resource type="AudioStream" uid="uid://b74vb1sfp60of" path="res://Assets/Music/Notes/c.mp3" id="4_vktaa"]
-[ext_resource type="AudioStream" uid="uid://vrtp2p6kgsxv" path="res://Assets/Music/Notes/e.mp3" id="5_4pc5c"]
-[ext_resource type="AudioStream" uid="uid://dfnp46el2h28p" path="res://Assets/Music/Notes/f.mp3" id="6_u7xhm"]
+[ext_resource type="Script" path="res://Scripts/MusicNotes/WindNote.gd" id="1_uhya7"]
+[ext_resource type="Texture2D" uid="uid://q5plointy1s0" path="res://Sprites/Notes/windnote.png" id="2_ohjkf"]
+[ext_resource type="Texture2D" uid="uid://dtsbtmdejtbc7" path="res://Assets/C_Water.png" id="3_vr7s6"]
+[ext_resource type="AudioStream" uid="uid://btvq18vmqbxic" path="res://Assets/Music/Notes/d.mp3" id="4_sps8x"]
+[ext_resource type="AudioStream" uid="uid://dfnp46el2h28p" path="res://Assets/Music/Notes/f.mp3" id="5_w71th"]
+[ext_resource type="AudioStream" uid="uid://cd3lwhr8vslf7" path="res://Assets/Music/Notes/a.mp3" id="6_87hua"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8hcql"]
 
@@ -30,13 +30,13 @@ scale_min = 0.5
 scale_max = 0.5
 scale_curve = SubResource("CurveTexture_chm5j")
 
-[node name="EarthNote" type="Node2D"]
+[node name="WIndNote" type="Node2D"]
 z_index = 2
-script = ExtResource("1_dvqji")
+script = ExtResource("1_uhya7")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.03, 0.03)
-texture = ExtResource("2_vk2y5")
+texture = ExtResource("2_ohjkf")
 
 [node name="Area" type="Area2D" parent="."]
 collision_mask = 2
@@ -50,7 +50,7 @@ scale = Vector2(0.5, 0.5)
 emitting = false
 amount = 25
 process_material = SubResource("ParticleProcessMaterial_j6wgt")
-texture = ExtResource("3_5knch")
+texture = ExtResource("3_vr7s6")
 one_shot = true
 explosiveness = 0.4
 randomness = 1.0
@@ -58,13 +58,13 @@ randomness = 1.0
 [node name="Players" type="Node2D" parent="."]
 
 [node name="NotePlayer1" type="AudioStreamPlayer2D" parent="Players"]
-stream = ExtResource("4_vktaa")
+stream = ExtResource("4_sps8x")
 volume_db = -5.0
 
 [node name="NotePlayer2" type="AudioStreamPlayer2D" parent="Players"]
-stream = ExtResource("5_4pc5c")
+stream = ExtResource("5_w71th")
 volume_db = -5.0
 
 [node name="NotePlayer3" type="AudioStreamPlayer2D" parent="Players"]
-stream = ExtResource("6_u7xhm")
+stream = ExtResource("6_87hua")
 volume_db = -5.0

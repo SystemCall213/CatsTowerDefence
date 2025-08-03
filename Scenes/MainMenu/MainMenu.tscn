@@ -1,7 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://m0xehxoqo22u"]
+[gd_scene load_steps=12 format=3 uid="uid://m0xehxoqo22u"]
 
 [ext_resource type="Texture2D" uid="uid://dxcq5nhfki5t" path="res://TileSet/resources/catssheet-0.png" id="1_2ga2j"]
 [ext_resource type="Texture2D" uid="uid://dwpo5vbivoaea" path="res://Sprites/TITLE.png" id="1_a8k4s"]
+[ext_resource type="Texture2D" uid="uid://du4ha83h5tvd0" path="res://TileSet/resources/catssheet-1.png" id="2_4ocgf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glr5m"]
+atlas = ExtResource("2_4ocgf")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pftpu"]
+atlas = ExtResource("2_4ocgf")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3irb"]
+atlas = ExtResource("2_4ocgf")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vvha6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glr5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pftpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3irb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m2266"]
 atlas = ExtResource("1_2ga2j")
@@ -82,12 +112,15 @@ text = "How to play"
 layout_mode = 2
 text = "Credits"
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Quit"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(792, 400)
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(963, 437)
 scale = Vector2(0.705078, 0.705078)
+sprite_frames = SubResource("SpriteFrames_vvha6")
+autoplay = "default"
+frame = 2
+frame_progress = 0.45009
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D2"]
+position = Vector2(-327.623, 17.0194)
 sprite_frames = SubResource("SpriteFrames_sxmll")
 autoplay = "default"
