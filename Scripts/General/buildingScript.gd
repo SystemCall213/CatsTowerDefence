@@ -5,7 +5,7 @@ extends Node2D
 @onready var catScene = load("res://Scenes/Entities/Cats/Cat.tscn")
 var source_id : int
 var selected_tile : Vector2i
-var cat_price:int = 10
+var cat_price:int = 15
 var source_size = 2
  
 var select_mode : bool = false

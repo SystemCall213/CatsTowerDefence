@@ -35,11 +35,11 @@ func _process(_delta):
 		for key in note_paths.keys():
 			if Input.is_action_just_pressed(key):
 				var path = note_paths[key]
-
+				_play_note(path)
 				# Add key to cat combination
 				current_cat.combination.add_char(key)
-
-		if Input.is_action_just_pressed("SPACE"):
+		
+		if Input.is_action_just_pressed("SPACE") and current_cat.combination.combination.size() > 0:
 			current_cat.combination.execute()
 			cat_mode = false
 	else:

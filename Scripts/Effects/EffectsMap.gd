@@ -13,43 +13,47 @@ static var badEffect:PackedScene = preload("res://Scenes/Effects/bad_effect.tscn
 	#G4_CRYO,
 	#A4_OIL,
 	#B4_LIGHTNING,
-
-static func check_element(target:Dog, element_scene: PackedScene):
+static func check_element(target: Dog, element_scene: PackedScene):
 	var elem_instance = element_scene.instantiate() as Element
 	elem_instance.init(target)
-	
+
 	# 1) Zbierz typy elementów na target + własny
-	var types := []
+	var types: Array[String] = []
 	for e in target.elements:
 		types.append(Elements.TypeNames[e.type])
 	types.sort()
-	var key := ",".join(types)
 
-	# 2) Wybierz odpowiednią scenę effectu
-	var scene: PackedScene
-	match key:
-		"C4_WATER,D4_FIRE":
-			scene = badEffect
-		"E4_EARTH,F4_WIND":
-			scene = badEffect
-		"C4_WATER,E4_EARTH,G4_CRYO":
-			print("mrozon")
-			scene = freezeEffect
-		"A4_OIL,D4_FIRE,F4_WIND":
-			print("fireball!")
-			scene = burnEffect
-		"D5_LIGHT,E4_EARTH,G4_CRYO":
-			scene = null
-		"B4_LIGHTNING,C4_WATER,E4_EARTH,G4_CRYO":
-			print("its so confusin to be gurl")
-			scene = confusion
-		_:
-			scene = null
-	# 3) jeśli mamy efekt, usuń spójne elementy z target.elements
+	# 2) Combinations as match-sets
+	var combinations := {
+		["C4_WATER", "D4_FIRE"]: badEffect,
+		["E4_EARTH", "F4_WIND"]: badEffect,
+		["C4_WATER", "E4_EARTH", "G4_CRYO"]: freezeEffect,
+		["A4_OIL", "D4_FIRE", "F4_WIND"]: burnEffect,
+		["B4_LIGHTNING", "C4_WATER", "E4_EARTH", "G4_CRYO"]: confusion
+	}
+
+	# 3) Find matching subset
+	var scene: PackedScene = null
+	var combination = null
+	for key_array in combinations.keys():
+		if _is_subset(key_array, types):
+			scene = combinations[key_array]
+			combination = key_array
+			break
+
+	# 4) Remove matched elements
 	if scene != null:
 		for e in target.elements.duplicate():
-			if types.has(Elements.TypeNames[e.type]):
+			if Elements.TypeNames[e.type] in combination:
 				target.elements.erase(e)
 				e.queue_free()
-	
+
 	return scene
+
+
+static func _is_subset(small, big) -> bool:
+	for item in small:
+		if big:
+			if not big.has(item):
+				return false
+	return true

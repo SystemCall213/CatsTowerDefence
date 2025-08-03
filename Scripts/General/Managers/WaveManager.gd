@@ -6,7 +6,8 @@ signal dog_killed
 var current_wave_idx: int = 0
 var enemy_spawners: Array[EnemySpawner]
 var wave_in_process = false
-var wave_max_hp_additor: int = 30
+var wave_max_hp_additor: int = 50
+var speed_additor: int = 13
 
 var total_waves: int
 
